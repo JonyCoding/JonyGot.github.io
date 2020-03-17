@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/03/16/%E4%BD%A0%E5%A5%BD-Jony/</loc>
+    
+    <lastmod>2020-03-17T15:14:27.365Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/lib/canvas-nest/README.html</loc>
+    
+    <lastmod>2020-03-17T11:28:46.951Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/sitemap/index.html</loc>
     
     <lastmod>2020-03-17T09:33:36.912Z</lastmod>
@@ -47,13 +61,6 @@
     <loc>http://yoursite.com/categories/index.html</loc>
     
     <lastmod>2020-03-17T08:57:32.852Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/03/16/%E4%BD%A0%E5%A5%BD-Jony/</loc>
-    
-    <lastmod>2020-03-17T03:54:52.167Z</lastmod>
     
   </url>
   
