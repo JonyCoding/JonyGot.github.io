@@ -6,7 +6,7 @@
          clearTimeout(titleTime);
      }
      else {
-         document.title = '(ฅ>ω<*ฅ) 噫又好了~' + OriginTitle;
+         document.title = '(ฅ>ω<*ฅ) 噫，又好惹~' + OriginTitle;
          titleTime = setTimeout(function () {
              document.title = OriginTitle;
          }, 2000);
