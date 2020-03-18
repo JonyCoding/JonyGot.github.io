@@ -2,11 +2,11 @@
  var titleTime;
  document.addEventListener('visibilitychange', function () {
      if (document.hidden) {
-         document.title = '╭(°A°`)╮ 页面崩溃啦 ~';
+         document.title = '❌ 404 页面出错了 ~';
          clearTimeout(titleTime);
      }
      else {
-         document.title = '(ฅ>ω<*ฅ) 噫，又好惹~' + OriginTitle;
+         document.title = '🥳 噫，又好惹~' + OriginTitle;
          titleTime = setTimeout(function () {
              document.title = OriginTitle;
          }, 2000);
