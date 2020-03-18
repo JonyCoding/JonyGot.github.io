@@ -1924,7 +1924,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #c40d69;
+  background: #1c13cf;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3050,8 +3050,13 @@ hr {
   color: #fff;
   border-radius: 8px;
 }
+.main-inner {
+  width: 1000px;
+}
 .footer {
   background: rgba(0,0,0,0);
+  position: relative;
+  margin-top: 0px;
 }
 .sidebar {
   display: block;
@@ -3071,9 +3076,35 @@ hr {
 .brand {
   transition: 1.5s all;
 }
-* {
-  cursor: url("../../images/duck.ico"), auto !important;
+.sidebar-toggle {
+  width: 20px;
+  height: 20px;
+  padding: 10px 10px 5px;
 }
-:active {
-  cursor: url("../../images/help.ico"), auto !important;
+.post-meta {
+  font-size: 15px;
+}
+post-body {
+  font-size: 14px;
+}
+.footer-inner {
+  text-align: center;
+}
+.main {
+  padding-bottom: 100px;
+}
+.posts-expand .post-title,
+.posts-expand .post-meta {
+  text-align: center;
+}
+.post-button {
+  text-align: center;
+}
+@media (max-width: 991px) {
+  .main {
+    width: 100%;
+  }
+  .main-inner {
+    width: 94%;
+  }
 }
