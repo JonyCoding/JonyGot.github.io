@@ -1928,7 +1928,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #c77077;
+  background: #d0ff66;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3039,7 +3039,7 @@ hr {
   border-radius: 15px;
 }
 .header {
-  background-image: linear-gradient(0deg, #041847, #5dcec6);
+  background: linear-gradient(45deg, #b92b27, #1565c0, #fdbb2d);
   position: flex;
 }
 .menu .menu-item a {
@@ -3105,6 +3105,65 @@ post-body {
 .post-button {
   text-align: center;
 }
+.post-button a {
+  -webkit-appearance: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  cursor: pointer;
+  width: 140px;
+  text-align: center;
+  background-image: linear-gradient(to top, #d8d9db 0%, #fff 80%, #fdfdfd 100%);
+  border-radius: 30px;
+  border: 1px solid #8f9092;
+  box-shadow: 0 4px 3px 1px #fcfcfc, 0 6px 8px #d6d7d9, 0 -4px 4px #cecfd1, 0 -6px 4px #fefefe, inset 0 0 3px 0 #cecfd1;
+  transition: all 0.2s ease;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #606060;
+  text-shadow: 0 1px #fff;
+  padding: 8px 0px;
+}
+.post-button a:hover:not([disabled]),
+[role="button"]:hover:not([disabled]) {
+  box-shadow: 0 4px 3px 1px #fcfcfc, 0 6px 8px #d6d7d9, 0 -4px 4px #cecfd1, 0 -6px 4px #fefefe, inset 0 0 3px 3px #cecfd1;
+}
+.post-button a:hover:not([disabled])>*,
+[role="button"]:hover:not([disabled])>* {
+  -webkit-transform: scale(0.975);
+  -webkit-transform: scale(0.975);
+  -moz-transform: scale(0.975);
+  -ms-transform: scale(0.975);
+  -o-transform: scale(0.975);
+  transform: scale(0.975);
+}
+.post-button a:focus:not(:active),
+[role="button"]:focus:not(:active) {
+  -webkit-animation: active 0.9s alternate infinite;
+  animation: active 0.9s alternate infinite;
+  outline: none;
+}
+.post-button a:active:not([disabled]),
+[role="button"]:active:not([disabled]) {
+  box-shadow: 0 4px 3px 1px #fcfcfc, 0 6px 8px #d6d7d9, 0 -4px 4px #cecfd1, 0 -6px 4px #fefefe, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+}
+.post-button a:active:not([disabled])>*,
+[role="button"]:active:not([disabled])>* {
+  -webkit-transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+  -moz-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  -o-transform: scale(0.95);
+  transform: scale(0.95);
+}
+body {
+  font-size: 16px;
+}
 .site-meta .site-title {
   font-size: 33px;
   font-family: 'Comic Sans MS', sans-serif;
@@ -3119,6 +3178,12 @@ post-body {
 }
 a {
   border-bottom: none;
+}
+.post-toc .nav .nav-child {
+  display: block;
+}
+.posts-expand .post-meta {
+  font-size: 16px;
 }
 @media (max-width: 767px) {
   .header-inner {
@@ -3143,4 +3208,80 @@ a {
   .posts-expand {
     margin: 0 10px;
   }
+  .posts-expand .post-meta {
+    font-size: 12px;
+  }
+  .btn-bar {
+    background: #fff;
+  }
+}
+.local-search-popup .search-icon,
+.local-search-popup .popup-btn-close {
+  color: rgba(21,161,216,0.949);
+}
+.local-search-popup .local-search-input-wrapper input {
+  padding-left: 10px;
+  height: 21px;
+  background-color: #fff;
+}
+.local-search-popup .popup-btn-close {
+  border-left: none;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}
+::-webkit-scrollbar-button:start:increment,
+::-webkit-scrollbar-button:end:decrement {
+  display: none;
+}
+::-webkit-scrollbar-corner {
+  display: block;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: rgba(0,0,0,0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  border-radius: 8px;
+  background-color: rgba(0,0,0,0.5);
+}
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb {
+  border-right: 1px solid transparent;
+  border-left: 1px solid transparent;
+}
+::-webkit-scrollbar-track:hover {
+  background-color: rgba(0,0,0,0.15);
+}
+::-webkit-scrollbar-button:start {
+  width: 10px;
+  height: 10px;
+}
+.back-to-top.back-to-top-on {
+  bottom: unset;
+  top: calc(100vh - 900px - 200px);
+}
+.back-to-top {
+  width: 70px;
+  height: 360px;
+  top: -900px;
+  bottom: unset;
+  transition: all 0.5s ease-in-out;
+  background: url("https://site-1258928558.cos.ap-guangzhou.myqcloud.com/scroll.png");
+}
+.back-to-top {
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 1050;
+  padding: 0 6px;
+  font-size: 12px;
+  opacity: 1;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
 }
