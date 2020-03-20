@@ -1982,7 +1982,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffcf16;
+  background: #b4ac98;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3162,28 +3162,9 @@ hr {
   height: 20px;
   padding: 10px 10px 5px;
 }
-.post-meta {
-  font-size: 15px;
-}
-post-body {
-  font-size: 14px;
-}
-.footer-inner {
-  text-align: center;
-}
-.main {
-  padding-bottom: 100px;
-}
-.posts-expand .post-title,
-.posts-expand .post-meta {
-  text-align: center;
-}
-.post-button {
-  text-align: center;
-}
 .back-to-top.back-to-top-on {
   bottom: unset;
-  top: calc(100vh - 900px - 200px);
+  top: calc(100vh - 800px - 200px);
 }
 .back-to-top {
   width: 64px;
@@ -3202,6 +3183,25 @@ post-body {
   opacity: 1;
   color: #fff;
   cursor: pointer;
+  text-align: center;
+}
+.post-meta {
+  font-size: 15px;
+}
+post-body {
+  font-size: 14px;
+}
+.footer-inner {
+  text-align: center;
+}
+.main {
+  padding-bottom: 100px;
+}
+.posts-expand .post-title,
+.posts-expand .post-meta {
+  text-align: center;
+}
+.post-button {
   text-align: center;
 }
 .post-button a {
@@ -3329,6 +3329,10 @@ a {
   .posts-expand .post-body {
     font-size: 15px;
   }
+  .back-to-top.back-to-top-on {
+    bottom: unset;
+    top: calc(100vh - 1200px - 200px);
+  }
 }
 @media (max-width: 1000px) {
   body {
@@ -3359,11 +3363,6 @@ a {
   }
   .btn-bar {
     background: #fff;
-  }
-  .back-to-top {
-    width: 64px;
-    height: 843px;
-    top: -750px;
   }
 }
 .back-to-top {
@@ -3418,7 +3417,6 @@ a {
 }
 .back-to-top.back-to-top-on {
   bottom: unset;
-  top: calc(100vh - 800px - 200px);
 }
 .back-to-top {
   width: 64px;
@@ -3442,4 +3440,8 @@ a {
 .tag-h2 {
   background: none;
   border: none;
+}
+.about_body {
+  width: 80%;
+  border-radius: 8%;
 }
