@@ -1982,7 +1982,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #b4ac98;
+  background: #adb0da;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3314,8 +3314,24 @@ a {
   color: #fff;
   font-size: 16px;
 }
+.sidebar a {
+  color: #fff;
+}
 .sidebar-inner text {
   color: #fff;
+}
+.site-description {
+  font-size: 18px;
+  color: #fff;
+}
+.site-description {
+  font-size: 26px;
+  color: #fff;
+}
+.links-of-author a {
+  font-size: 15px;
+  margin-left: 15px;
+  color: #f2f2f2;
 }
 @media (min-width: 1600px) {
   .container .main-inner {
