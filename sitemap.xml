@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/archives/index.html</loc>
+    
+    <lastmod>2020-03-25T06:41:43.078Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2019/03/05/C-lianbiao/</loc>
     
     <lastmod>2020-03-24T16:38:06.035Z</lastmod>
@@ -75,13 +82,6 @@
     <loc>http://yoursite.com/sitemap/index.html</loc>
     
     <lastmod>2020-03-17T09:33:36.912Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/archives/index.html</loc>
-    
-    <lastmod>2020-03-17T09:15:41.648Z</lastmod>
     
   </url>
   

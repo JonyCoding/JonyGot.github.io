@@ -3,29 +3,41 @@
   <entry>
     <title>数据结构-线性表</title>
     <url>/2019/03/05/C-lianbiao/</url>
-    <content><![CDATA[<h1 id="数据结构-线性表"><a href="#数据结构-线性表" class="headerlink" title="数据结构-线性表"></a>数据结构-线性表</h1><p>由同类型数据元素构成有序序列的线性结构，例如由数组和指针组成的线性结构</p>
-<h2 id="储存结构实现"><a href="#储存结构实现" class="headerlink" title="储存结构实现"></a>储存结构实现</h2><h3 id="链表的顺序储存结构："><a href="#链表的顺序储存结构：" class="headerlink" title="链表的顺序储存结构："></a>链表的顺序储存结构：</h3><p>利用数组的连续存储空间顺序存放线性表的各元素</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">typedef struct LNode *List;</span><br><span class="line">struct LNode&#123;</span><br><span class="line">    ElementType Data[MAXSIZE];</span><br><span class="line">    int Last;</span><br><span class="line">&#125; ;</span><br><span class="line">struct LNode L;</span><br><span class="line">List PtrL;</span><br></pre></td></tr></table></figure></div>
-<p>访问下标为 i 的元素：L.Data[i] 或 PtrL-&gt;Data[i]<br>线性表的长度：L.Last+1 或 PtrL-&gt;Last+1</p>
-<h3 id="链表的链式储存结构："><a href="#链表的链式储存结构：" class="headerlink" title="链表的链式储存结构："></a>链表的链式储存结构：</h3><p>不要求逻辑上相邻的两个元素物理上也相邻；通过“链”建<br>立起数据元素之间的逻辑关系。</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">typedef struct LNode *List;</span><br><span class="line">struct LNode&#123;</span><br><span class="line"> ElementType Data;</span><br><span class="line"> List Next;</span><br><span class="line">&#125;;</span><br><span class="line">struct Lnode L;</span><br><span class="line">List PtrL;</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="主要操作的实现（链式）"><a href="#主要操作的实现（链式）" class="headerlink" title="主要操作的实现（链式）"></a>主要操作的实现（链式）</h2><h3 id="求表长"><a href="#求表长" class="headerlink" title="求表长"></a>求表长</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">int Length ( List PtrL )</span><br><span class="line">&#123; List p &#x3D; PtrL; &#x2F;* p指向表的第一个结点*&#x2F;</span><br><span class="line"> int j &#x3D; 0;</span><br><span class="line"> while ( p ) &#123;</span><br><span class="line"> p &#x3D; p-&gt;Next;</span><br><span class="line"> j++; &#x2F;* 当前p指向的是第 j 个结点*&#x2F;</span><br><span class="line"> &#125;</span><br><span class="line"> return j;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<h3 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h3><h4 id="按序号查找-FindKth"><a href="#按序号查找-FindKth" class="headerlink" title="按序号查找: FindKth;"></a>按序号查找: FindKth;</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">List FindKth( int K, List PtrL )</span><br><span class="line">&#123; List p &#x3D; PtrL;</span><br><span class="line"> int i &#x3D; 1;</span><br><span class="line"> while (p !&#x3D;NULL &amp;&amp; i &lt; K )&#123;</span><br><span class="line"> p &#x3D; p-&gt;Next;</span><br><span class="line"> i++;</span><br><span class="line"> &#125;</span><br><span class="line"> if ( i &#x3D;&#x3D; K ) return p;</span><br><span class="line"> &#x2F;* 找到第K个，返回指针 *&#x2F;</span><br><span class="line"> else return NULL;</span><br><span class="line"> &#x2F;* 否则返回空 *&#x2F;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<h4 id="按值查找-Find"><a href="#按值查找-Find" class="headerlink" title="按值查找: Find"></a>按值查找: Find</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">List Find( ElementType X, List PtrL )</span><br><span class="line">&#123;</span><br><span class="line"> List p &#x3D; PtrL;</span><br><span class="line"> while ( p!&#x3D;NULL &amp;&amp; p-&gt;Data !&#x3D; X )</span><br><span class="line"> p &#x3D; p-&gt;Next;</span><br><span class="line"> return p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<h3 id="插入（在第-i-1-1≤i≤n-1-个结点后插入一个值为X的新结点"><a href="#插入（在第-i-1-1≤i≤n-1-个结点后插入一个值为X的新结点" class="headerlink" title="插入（在第 i-1(1≤i≤n+1)个结点后插入一个值为X的新结点)"></a>插入（在第 i-1(1≤i≤n+1)个结点后插入一个值为X的新结点)</h3><ul>
+    <content><![CDATA[<h1>数据结构-线性表</h1>
+<p>由同类型数据元素构成有序序列的线性结构，例如由数组和指针组成的线性结构</p>
+<h2 id="储存结构实现">储存结构实现</h2>
+<h3 id="链表的顺序储存结构：">链表的顺序储存结构：</h3>
+<p>利用数组的连续存储空间顺序存放线性表的各元素</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">LNode</span> *<span class="hljs-title">List</span>;</span><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">LNode</span>&#123;</span><br>    ElementType Data[MAXSIZE];<br>    <span class="hljs-keyword">int</span> Last;<br>&#125; ;<br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">LNode</span> <span class="hljs-title">L</span>;</span><br>List PtrL;<br></code></pre></td></tr></table></figure>
+<p>访问下标为 i 的元素：L.Data[i] 或 PtrL-&gt;Data[i]<br>
+线性表的长度：L.Last+1 或 PtrL-&gt;Last+1</p>
+<h3 id="链表的链式储存结构：">链表的链式储存结构：</h3>
+<p>不要求逻辑上相邻的两个元素物理上也相邻；通过“链”建<br>
+立起数据元素之间的逻辑关系。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">LNode</span> *<span class="hljs-title">List</span>;</span><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">LNode</span>&#123;</span><br> ElementType Data;<br> List Next;<br>&#125;;<br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Lnode</span> <span class="hljs-title">L</span>;</span><br>List PtrL;<br></code></pre></td></tr></table></figure>
+<h2 id="主要操作的实现（链式）">主要操作的实现（链式）</h2>
+<h3 id="求表长">求表长</h3>
+<figure class="highlight zephir"><table><tr><td class="code"><pre><code class="hljs zephir"><span class="hljs-keyword">int</span> Length ( <span class="hljs-keyword">List</span> PtrL )<br>&#123; <span class="hljs-keyword">List</span> p = PtrL; <span class="hljs-comment">/* p指向表的第一个结点*/</span><br> <span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>;<br> <span class="hljs-keyword">while</span> ( p ) &#123;<br> p = p-&gt;Next;<br> j++; <span class="hljs-comment">/* 当前p指向的是第 j 个结点*/</span><br> &#125;<br> <span class="hljs-keyword">return</span> j;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="查找">查找</h3>
+<h4 id="按序号查找-FindKth">按序号查找: FindKth;</h4>
+<figure class="highlight zephir"><table><tr><td class="code"><pre><code class="hljs zephir"><span class="hljs-keyword">List</span> FindKth( <span class="hljs-keyword">int</span> K, <span class="hljs-keyword">List</span> PtrL )<br>&#123; <span class="hljs-keyword">List</span> p = PtrL;<br> <span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;<br> <span class="hljs-keyword">while</span> (p !=<span class="hljs-keyword">NULL</span> &amp;&amp; i &lt; K )&#123;<br> p = p-&gt;Next;<br> i++;<br> &#125;<br> <span class="hljs-keyword">if</span> ( i == K ) <span class="hljs-keyword">return</span> p;<br> <span class="hljs-comment">/* 找到第K个，返回指针 */</span><br> <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> <span class="hljs-keyword">NULL</span>;<br> <span class="hljs-comment">/* 否则返回空 */</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="按值查找-Find">按值查找: Find</h4>
+<figure class="highlight sas"><table><tr><td class="code"><pre><code class="hljs sas"><span class="hljs-meta">List</span> Find( ElementType <span class="hljs-meta">X</span>, <span class="hljs-meta">List</span> PtrL )<br>&#123;<br> <span class="hljs-meta">List</span> p = PtrL;<br> <span class="hljs-meta">while</span> ( p!=<span class="hljs-meta">NULL</span> <span class="hljs-variable">&amp;&amp;</span> p-&gt;Data != <span class="hljs-meta">X</span> )<br> p = p-&gt;Next;<br> <span class="hljs-meta">return</span> p;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="插入（在第-i-1-1≤i≤n-1-个结点后插入一个值为X的新结点">插入（在第 i-1(1≤i≤n+1)个结点后插入一个值为X的新结点)</h3>
+<ul>
 <li>先构造一个新结点，用s指向；</li>
 <li>再找到链表的第 i-1个结点，用p指向；</li>
 <li>然后修改指针，插入结点 ( p之后插入新结点是 s)</li>
 </ul>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">List Insert( ElementType X, int i, List PtrL )</span><br><span class="line">&#123; List p, s;</span><br><span class="line"> if ( i &#x3D;&#x3D; 1 ) &#123; &#x2F;* 新结点插入在表头 *&#x2F;</span><br><span class="line"> s &#x3D; (List)malloc(sizeof(struct LNode)); &#x2F;*申请、填装结点*&#x2F;</span><br><span class="line"> s-&gt;Data &#x3D; X;</span><br><span class="line"> s-&gt;Next &#x3D; PtrL;</span><br><span class="line"> return s; &#x2F;*返回新表头指针*&#x2F;</span><br><span class="line"> &#125;</span><br><span class="line"> p &#x3D; FindKth( i-1, PtrL ); &#x2F;* 查找第i-1个结点 *&#x2F;</span><br><span class="line"> if ( p &#x3D;&#x3D; NULL ) &#123; &#x2F;* 第i-1个不存在，不能插入 *&#x2F;</span><br><span class="line"> printf(＂参数i错＂);</span><br><span class="line"> return NULL;</span><br><span class="line"> &#125;else &#123;</span><br><span class="line"> s &#x3D; (List)malloc(sizeof(struct LNode)); &#x2F;*申请、填装结点*&#x2F;</span><br><span class="line"> s-&gt;Data &#x3D; X;</span><br><span class="line"> s-&gt;Next &#x3D; p-&gt;Next; &#x2F;*新结点插入在第i-1个结点的后面*&#x2F;</span><br><span class="line"> p-&gt;Next &#x3D; s;</span><br><span class="line"> return PtrL;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></div>
-<h3 id="删除（删除链表的第-i-1≤i≤n-个位置上的结点"><a href="#删除（删除链表的第-i-1≤i≤n-个位置上的结点" class="headerlink" title="删除（删除链表的第 i (1≤i≤n)个位置上的结点)"></a>删除（删除链表的第 i (1≤i≤n)个位置上的结点)</h3><ul>
+<figure class="highlight zephir"><table><tr><td class="code"><pre><code class="hljs zephir"><span class="hljs-keyword">List</span> Insert( ElementType X, <span class="hljs-keyword">int</span> i, <span class="hljs-keyword">List</span> PtrL )<br>&#123; <span class="hljs-keyword">List</span> p, s;<br> <span class="hljs-keyword">if</span> ( i == <span class="hljs-number">1</span> ) &#123; <span class="hljs-comment">/* 新结点插入在表头 */</span><br> s = (<span class="hljs-keyword">List</span>)malloc(sizeof(struct LNode)); <span class="hljs-comment">/*申请、填装结点*/</span><br> s-&gt;Data = X;<br> s-&gt;Next = PtrL;<br> <span class="hljs-keyword">return</span> s; <span class="hljs-comment">/*返回新表头指针*/</span><br> &#125;<br> p = FindKth( i<span class="hljs-number">-1</span>, PtrL ); <span class="hljs-comment">/* 查找第i-1个结点 */</span><br> <span class="hljs-keyword">if</span> ( p == <span class="hljs-keyword">NULL</span> ) &#123; <span class="hljs-comment">/* 第i-1个不存在，不能插入 */</span><br> printf(＂参数i错＂);<br> <span class="hljs-keyword">return</span> <span class="hljs-keyword">NULL</span>;<br> &#125;<span class="hljs-keyword">else</span> &#123;<br> s = (<span class="hljs-keyword">List</span>)malloc(sizeof(struct LNode)); <span class="hljs-comment">/*申请、填装结点*/</span><br> s-&gt;Data = X;<br> s-&gt;Next = p-&gt;Next; <span class="hljs-comment">/*新结点插入在第i-1个结点的后面*/</span><br> p-&gt;Next = s;<br> <span class="hljs-keyword">return</span> PtrL;<br> &#125;<br></code></pre></td></tr></table></figure>
+<h3 id="删除（删除链表的第-i-1≤i≤n-个位置上的结点">删除（删除链表的第 i (1≤i≤n)个位置上的结点)</h3>
+<ul>
 <li>先找到链表的第 i-1个结点，用p指向；</li>
 <li>再用指针s指向要被删除的结点（p的下一个结点）;</li>
 <li>然后修改指针，删除s所指结点;</li>
 <li>最后释放s所指结点的空间。</li>
 </ul>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">List Delete( int i, List PtrL )</span><br><span class="line">&#123; List p, s;</span><br><span class="line"> if ( i &#x3D;&#x3D; 1 ) &#123; &#x2F;* 若要删除的是表的第一个结点 *&#x2F;</span><br><span class="line"> s &#x3D; PtrL; &#x2F;*s指向第1个结点*&#x2F;</span><br><span class="line"> if (PtrL!&#x3D;NULL) PtrL &#x3D; PtrL-&gt;Next; &#x2F;*从链表中删除*&#x2F;</span><br><span class="line"> else return NULL;</span><br><span class="line"> free(s); &#x2F;*释放被删除结点 *&#x2F;</span><br><span class="line"> return PtrL;</span><br><span class="line"> &#125;</span><br><span class="line"> p &#x3D; FindKth( i-1, PtrL ); &#x2F;*查找第i-1个结点*&#x2F;</span><br><span class="line"> if ( p &#x3D;&#x3D; NULL ) &#123;</span><br><span class="line"> printf(“第%d个结点不存在”, i-1); return NULL;</span><br><span class="line"> &#125; else if ( p-&gt;Next &#x3D;&#x3D; NULL )&#123;</span><br><span class="line"> printf(“第%d个结点不存在”, i); return NULL;</span><br><span class="line"> &#125; else &#123;</span><br><span class="line"> s &#x3D; p-&gt;Next; &#x2F;*s指向第i个结点*&#x2F;</span><br><span class="line"> p-&gt;Next &#x3D; s-&gt;Next; &#x2F;*从链表中删除*&#x2F;</span><br><span class="line"> free(s); &#x2F;*释放被删除结点 *&#x2F;</span><br><span class="line"> return PtrL;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></div>
+<figure class="highlight zephir"><table><tr><td class="code"><pre><code class="hljs zephir"><span class="hljs-keyword">List</span> Delete( <span class="hljs-keyword">int</span> i, <span class="hljs-keyword">List</span> PtrL )<br>&#123; <span class="hljs-keyword">List</span> p, s;<br> <span class="hljs-keyword">if</span> ( i == <span class="hljs-number">1</span> ) &#123; <span class="hljs-comment">/* 若要删除的是表的第一个结点 */</span><br> s = PtrL; <span class="hljs-comment">/*s指向第1个结点*/</span><br> <span class="hljs-keyword">if</span> (PtrL!=<span class="hljs-keyword">NULL</span>) PtrL = PtrL-&gt;Next; <span class="hljs-comment">/*从链表中删除*/</span><br> <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> <span class="hljs-keyword">NULL</span>;<br> free(s); <span class="hljs-comment">/*释放被删除结点 */</span><br> <span class="hljs-keyword">return</span> PtrL;<br> &#125;<br> p = FindKth( i<span class="hljs-number">-1</span>, PtrL ); <span class="hljs-comment">/*查找第i-1个结点*/</span><br> <span class="hljs-keyword">if</span> ( p == <span class="hljs-keyword">NULL</span> ) &#123;<br> printf(“第%d个结点不存在”, i<span class="hljs-number">-1</span>); <span class="hljs-keyword">return</span> <span class="hljs-keyword">NULL</span>;<br> &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ( p-&gt;Next == <span class="hljs-keyword">NULL</span> )&#123;<br> printf(“第%d个结点不存在”, i); <span class="hljs-keyword">return</span> <span class="hljs-keyword">NULL</span>;<br> &#125; <span class="hljs-keyword">else</span> &#123;<br> s = p-&gt;Next; <span class="hljs-comment">/*s指向第i个结点*/</span><br> p-&gt;Next = s-&gt;Next; <span class="hljs-comment">/*从链表中删除*/</span><br> free(s); <span class="hljs-comment">/*释放被删除结点 */</span><br> <span class="hljs-keyword">return</span> PtrL;<br> &#125;<br></code></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>C语言</category>
@@ -38,51 +50,65 @@
   <entry>
     <title>指针和数组</title>
     <url>/2019/02/28/C-shuzu/</url>
-    <content><![CDATA[<h1 id="指针与数组"><a href="#指针与数组" class="headerlink" title="指针与数组"></a>指针与数组</h1><h2 id="传⼊函数的数组成了什么？"><a href="#传⼊函数的数组成了什么？" class="headerlink" title="传⼊函数的数组成了什么？"></a>传⼊函数的数组成了什么？</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">int isPrime(int x,int knownPrimes[], int numbe rOfKnownPrimes )</span><br><span class="line">&#123;</span><br><span class="line">int ret &#x3D; 1;</span><br><span class="line">    int i; </span><br><span class="line">    for ( i&#x3D;0; i&lt;numbe rOfKnownP rimes;i++)&#123;</span><br><span class="line">        if ( X %knownPrimes[i] &#x3D;&#x3D;0 )&#123;</span><br><span class="line">            ret &#x3D; 0;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">        return ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+    <content><![CDATA[<h1>指针与数组</h1>
+<h2 id="传⼊函数的数组成了什么？">传⼊函数的数组成了什么？</h2>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><code class="hljs angelscript"><span class="hljs-built_in">int</span> isPrime(<span class="hljs-built_in">int</span> x,<span class="hljs-built_in">int</span> knownPrimes[], <span class="hljs-built_in">int</span> numbe rOfKnownPrimes )<br>&#123;<br><span class="hljs-built_in">int</span> ret = <span class="hljs-number">1</span>;<br>    <span class="hljs-built_in">int</span> i; <br>    <span class="hljs-keyword">for</span> ( i=<span class="hljs-number">0</span>; i&lt;numbe rOfKnownP rimes;i++)&#123;<br>        <span class="hljs-keyword">if</span> ( X %knownPrimes[i] ==<span class="hljs-number">0</span> )&#123;<br>            ret = <span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">break</span>;<br>        &#125;<br>    &#125;<br>        <span class="hljs-keyword">return</span> ret;<br>&#125;<br></code></pre></td></tr></table></figure>
 <blockquote>
 <p>函数参数表中的数组实际上是指针</p>
 <blockquote>
-<p>sizeof(a) == sizeof(int*)<br>但是可以⽤数组的运算符[]进⾏运算</p>
+<p>sizeof(a) == sizeof(int*)<br>
+但是可以⽤数组的运算符[]进⾏运算</p>
 </blockquote>
 </blockquote>
-<h2 id="数组参数"><a href="#数组参数" class="headerlink" title="数组参数"></a>数组参数</h2><h3 id="以下四种函数原型是等价的："><a href="#以下四种函数原型是等价的：" class="headerlink" title="以下四种函数原型是等价的："></a>以下四种函数原型是等价的：</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">int sum(int *ar, int n);</span><br><span class="line">int sum(int *, int);</span><br><span class="line">int sum(int ar[], int n);</span><br><span class="line">int sum(int [], int);</span><br></pre></td></tr></table></figure></div>
-<h2 id="数组变量是特殊的指针"><a href="#数组变量是特殊的指针" class="headerlink" title="数组变量是特殊的指针"></a>数组变量是特殊的指针</h2><blockquote>
+<h2 id="数组参数">数组参数</h2>
+<h3 id="以下四种函数原型是等价的：">以下四种函数原型是等价的：</h3>
+<figure class="highlight excel"><table><tr><td class="code"><pre><code class="hljs excel"><span class="hljs-built_in">int</span> <span class="hljs-built_in">sum</span>(<span class="hljs-built_in">int</span> *ar, <span class="hljs-built_in">int</span> <span class="hljs-built_in">n</span>);<br><span class="hljs-built_in">int</span> <span class="hljs-built_in">sum</span>(<span class="hljs-built_in">int</span> *, <span class="hljs-built_in">int</span>);<br><span class="hljs-built_in">int</span> <span class="hljs-built_in">sum</span>(<span class="hljs-built_in">int</span> ar[], <span class="hljs-built_in">int</span> <span class="hljs-built_in">n</span>);<br><span class="hljs-built_in">int</span> <span class="hljs-built_in">sum</span>(<span class="hljs-built_in">int</span> [], <span class="hljs-built_in">int</span>);<br></code></pre></td></tr></table></figure>
+<h2 id="数组变量是特殊的指针">数组变量是特殊的指针</h2>
+<blockquote>
 <p>数组变量本⾝表达地址，所以</p>
 <blockquote>
-<p>int a[10]; int*p=a; // ⽆需⽤&amp;取地址<br>但是数组的单元表达的是变量，需要⽤&amp;取地址<br>a == &amp;a[0]  </p>
+<p>int a[10]; int*p=a; // ⽆需⽤&amp;取地址<br>
+但是数组的单元表达的是变量，需要⽤&amp;取地址<br>
+a == &amp;a[0]</p>
 </blockquote>
 </blockquote>
 <blockquote>
-<p>[]运算符可以对数组做，也可以对指针做：  </p>
+<p>[]运算符可以对数组做，也可以对指针做：</p>
 <blockquote>
-<p>p[0] &lt;= =&gt; a[0]  </p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>*运算符可以对指针做，也可以对数组做：  </p>
-<blockquote>
-<p>*a = 25;  </p>
+<p>p[0] &lt;= =&gt; a[0]</p>
 </blockquote>
 </blockquote>
 <blockquote>
-<p>数组变量是const的指针，所以不能被赋值  </p>
+<p>*运算符可以对指针做，也可以对数组做：</p>
 <blockquote>
-<p>int a[] &lt;==&gt; int * const a=….  </p>
+<p>*a = 25;</p>
 </blockquote>
 </blockquote>
-<h2 id="指针与const-仅限C99"><a href="#指针与const-仅限C99" class="headerlink" title="指针与const(仅限C99)"></a>指针与const(仅限C99)</h2><p><img src="http://q7e8xd0qk.bkt.clouddn.com/blog/c6nnc3.png" alt="c6nnc3"></p>
-<h3 id="表⽰⼀旦得到了某个变量的地址，不能再指向其他变量"><a href="#表⽰⼀旦得到了某个变量的地址，不能再指向其他变量" class="headerlink" title="表⽰⼀旦得到了某个变量的地址，不能再指向其他变量"></a>表⽰⼀旦得到了某个变量的地址，不能再指向其他变量</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">int * const q &#x3D; &amp;i; &#x2F;&#x2F; q 是 const</span><br><span class="line"> *q &#x3D; 26; &#x2F;&#x2F; OK</span><br><span class="line"> q++; &#x2F;&#x2F; ERROR</span><br></pre></td></tr></table></figure></div>
-<h2 id="所指是const"><a href="#所指是const" class="headerlink" title="所指是const"></a>所指是const</h2><h3 id="表⽰不能通过这个指针去修改那个变量（并不能使得那个变量成为const）"><a href="#表⽰不能通过这个指针去修改那个变量（并不能使得那个变量成为const）" class="headerlink" title="表⽰不能通过这个指针去修改那个变量（并不能使得那个变量成为const）"></a>表⽰不能通过这个指针去修改那个变量（并不能使得那个变量成为const）</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">const int *p &#x3D; &amp;i;</span><br><span class="line"> *p &#x3D; 26; &#x2F;&#x2F; ERROR! (*p) 是 const</span><br><span class="line"> i &#x3D; 26; &#x2F;&#x2F;OK</span><br><span class="line"> p &#x3D; &amp;j; &#x2F;&#x2F;OK</span><br></pre></td></tr></table></figure></div>
-<h3 id="判断哪个被const了的标志是const在-的前⾯还是后⾯"><a href="#判断哪个被const了的标志是const在-的前⾯还是后⾯" class="headerlink" title="判断哪个被const了的标志是const在*的前⾯还是后⾯"></a>判断哪个被const了的标志是const在*的前⾯还是后⾯</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">int i;</span><br><span class="line">const int* p1 &#x3D; &amp;i;</span><br><span class="line">int const* p2 &#x3D; &amp;i;</span><br><span class="line">int *const p3 &#x3D; &amp;i;</span><br></pre></td></tr></table></figure></div>
-<h2 id="const数组"><a href="#const数组" class="headerlink" title="const数组"></a>const数组</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">const int a[] &#x3D; &#123;1,2,3,4,5,6,&#125;;</span><br></pre></td></tr></table></figure></div>
+<blockquote>
+<p>数组变量是const的指针，所以不能被赋值</p>
+<blockquote>
+<p>int a[] &lt;==&gt; int * const a=….</p>
+</blockquote>
+</blockquote>
+<h2 id="指针与const-仅限C99">指针与const(仅限C99)</h2>
+<p><img src="http://q7e8xd0qk.bkt.clouddn.com/blog/c6nnc3.png" alt="c6nnc3"></p>
+<h3 id="表⽰⼀旦得到了某个变量的地址，不能再指向其他变量">表⽰⼀旦得到了某个变量的地址，不能再指向其他变量</h3>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><code class="hljs angelscript"><span class="hljs-built_in">int</span> * <span class="hljs-keyword">const</span> q = &amp;i; <span class="hljs-comment">// q 是 const</span><br> *q = <span class="hljs-number">26</span>; <span class="hljs-comment">// OK</span><br> q++; <span class="hljs-comment">// ERROR</span><br></code></pre></td></tr></table></figure>
+<h2 id="所指是const">所指是const</h2>
+<h3 id="表⽰不能通过这个指针去修改那个变量（并不能使得那个变量成为const）">表⽰不能通过这个指针去修改那个变量（并不能使得那个变量成为const）</h3>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><code class="hljs angelscript"><span class="hljs-keyword">const</span> <span class="hljs-built_in">int</span> *p = &amp;i;<br> *p = <span class="hljs-number">26</span>; <span class="hljs-comment">// ERROR! (*p) 是 const</span><br> i = <span class="hljs-number">26</span>; <span class="hljs-comment">//OK</span><br> p = &amp;j; <span class="hljs-comment">//OK</span><br></code></pre></td></tr></table></figure>
+<h3 id="判断哪个被const了的标志是const在-的前⾯还是后⾯">判断哪个被const了的标志是const在*的前⾯还是后⾯</h3>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><code class="hljs angelscript"><span class="hljs-built_in">int</span> i;<br><span class="hljs-keyword">const</span> <span class="hljs-built_in">int</span>* p1 = &amp;i;<br><span class="hljs-built_in">int</span> <span class="hljs-keyword">const</span>* p2 = &amp;i;<br><span class="hljs-built_in">int</span> *<span class="hljs-keyword">const</span> p3 = &amp;i;<br></code></pre></td></tr></table></figure>
+<h2 id="const数组">const数组</h2>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><code class="hljs angelscript"><span class="hljs-keyword">const</span> <span class="hljs-built_in">int</span> a[] = &#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,&#125;;<br></code></pre></td></tr></table></figure>
 <p>数组变量已经是const的指针了，这⾥的const表明数组的每个单元都是const int所以必须通过初始化进⾏赋值</p>
 <ul>
-<li>这样做的好处<ul>
+<li>这样做的好处</li>
+</ul>
+<ul>
 <li>因为把数组传⼊函数时传递的是地址，所以那个函数内部可以修改数组的值</li>
 <li>为了保护数组不被函数破坏，可以设置参数为const</li>
 <li>int sum(const int a[], int length);</li>
-</ul>
-</li>
 </ul>
 ]]></content>
       <categories>
@@ -97,22 +123,35 @@
   <entry>
     <title>C语言难点-指针</title>
     <url>/2019/02/28/C-zhizhen/</url>
-    <content><![CDATA[<h1 id="C语言难点-指针"><a href="#C语言难点-指针" class="headerlink" title="C语言难点-指针"></a>C语言难点-指针</h1><h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">int i;</span><br><span class="line">int* p&#x3D;&amp;i;</span><br><span class="line">int* p,q;</span><br><span class="line">int *p,q;</span><br></pre></td></tr></table></figure></div>
-<h2 id="指针变量"><a href="#指针变量" class="headerlink" title="指针变量"></a>指针变量</h2><blockquote>
-<p>变量的值是内存的地址<br>普通变量的值是实际的值<br>指针变量的值是具有实际值的变量的地址<br><img src="http://q7e8xd0qk.bkt.clouddn.com/blog/YpixqE.png" alt="YpixqE"></p>
+    <content><![CDATA[<h1>C语言难点-指针</h1>
+<h2 id="指针">指针</h2>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><code class="hljs angelscript"><span class="hljs-built_in">int</span> i;<br><span class="hljs-built_in">int</span>* p=&amp;i;<br><span class="hljs-built_in">int</span>* p,q;<br><span class="hljs-built_in">int</span> *p,q;<br></code></pre></td></tr></table></figure>
+<h2 id="指针变量">指针变量</h2>
+<blockquote>
+<p>变量的值是内存的地址<br>
+普通变量的值是实际的值<br>
+指针变量的值是具有实际值的变量的地址<br>
+<img src="http://q7e8xd0qk.bkt.clouddn.com/blog/YpixqE.png" alt="YpixqE"></p>
 </blockquote>
-<h2 id="作为参数的指针"><a href="#作为参数的指针" class="headerlink" title="作为参数的指针"></a>作为参数的指针</h2><p>在被调用的时候得到了某个变量的地址: </p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">void f(int *p);</span><br></pre></td></tr></table></figure></div>
-<p>在函数里面可以通过这个指针访问外面的这个i  </p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">int i&#x3D;0; f(&amp;i);</span><br></pre></td></tr></table></figure></div>
-<h3 id="访问那个地址-上的变量"><a href="#访问那个地址-上的变量" class="headerlink" title="访问那个地址.上的变量*"></a>访问那个地址.上的变量*</h3><p>是一个单目运算符，用来访问指针的值所表示的地<br>可以做右值也可以做左值</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">intk&#x3D; *p;</span><br><span class="line">*p&#x3D; k+1;</span><br></pre></td></tr></table></figure></div>
-<h3 id="左值为什么叫左值，"><a href="#左值为什么叫左值，" class="headerlink" title="*左值为什么叫左值，"></a>*左值为什么叫左值，</h3><p>是因为出现在赋值号左边的不是变量，而是值，是表达式计算的结果:</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">a[O]&#x3D;2;</span><br><span class="line">*p&#x3D; 3;</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="指针应用场景"><a href="#指针应用场景" class="headerlink" title="指针应用场景"></a>指针应用场景</h2><h3 id="交换变量的值"><a href="#交换变量的值" class="headerlink" title="交换变量的值"></a>交换变量的值</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">void swap(int *pa, int *pb)</span><br><span class="line">&#123;</span><br><span class="line">int t &#x3D; *pa;</span><br><span class="line">*pa &#x3D; *pb;</span><br><span class="line">*pb &#x3D;t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<h3 id="函数返回多个值，某些值就只能通过指针返回"><a href="#函数返回多个值，某些值就只能通过指针返回" class="headerlink" title="函数返回多个值，某些值就只能通过指针返回"></a>函数返回多个值，某些值就只能通过指针返回</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">传入的参数实际上是需要保存带回的结果的变量</span><br><span class="line">函数返回运算的状态，结果通过指针返回</span><br><span class="line">常用的套路是让函数返回特殊的不属于有效范围内的值来表示出错:</span><br><span class="line">-1或0 (在文件操作会看到大量的例子)</span><br><span class="line">但是当任何数值都是有效的可能结果时，就得分开返回了</span><br><span class="line">需要注意的是后续的语言(C++,Java) 采用了异常机制来解决这个问题</span><br></pre></td></tr></table></figure></div>
-<h2 id="指针最常见的错误"><a href="#指针最常见的错误" class="headerlink" title="指针最常见的错误"></a>指针最常见的错误</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">定义了指针变量，还没有指向任何变量，就开始使用指针</span><br></pre></td></tr></table></figure></div>
+<h2 id="作为参数的指针">作为参数的指针</h2>
+<p>在被调用的时候得到了某个变量的地址:</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">f</span><span class="hljs-params">(<span class="hljs-keyword">int</span> *p)</span></span>;<br></code></pre></td></tr></table></figure>
+<p>在函数里面可以通过这个指针访问外面的这个i</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><code class="hljs angelscript"><span class="hljs-built_in">int</span> i=<span class="hljs-number">0</span>; f(&amp;i);<br></code></pre></td></tr></table></figure>
+<h3 id="访问那个地址-上的变量">访问那个地址.上的变量*</h3>
+<p>是一个单目运算符，用来访问指针的值所表示的地<br>
+可以做右值也可以做左值</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><code class="hljs angelscript"><span class="hljs-built_in">int</span>k= *p;<br>*p= k+<span class="hljs-number">1</span>;<br></code></pre></td></tr></table></figure>
+<h3 id="左值为什么叫左值，">*左值为什么叫左值，</h3>
+<p>是因为出现在赋值号左边的不是变量，而是值，是表达式计算的结果:</p>
+<figure class="highlight abnf"><table><tr><td class="code"><pre><code class="hljs abnf">a[O]=<span class="hljs-number">2</span><span class="hljs-comment">;</span><br>*p= <span class="hljs-number">3</span><span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure>
+<h2 id="指针应用场景">指针应用场景</h2>
+<h3 id="交换变量的值">交换变量的值</h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-keyword">int</span> *pa, <span class="hljs-keyword">int</span> *pb)</span></span><br><span class="hljs-function"></span>&#123;<br><span class="hljs-keyword">int</span> t = *pa;<br>*pa = *pb;<br>*pb =t;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="函数返回多个值，某些值就只能通过指针返回">函数返回多个值，某些值就只能通过指针返回</h3>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><code class="hljs angelscript">传入的参数实际上是需要保存带回的结果的变量<br>函数返回运算的状态，结果通过指针返回<br>常用的套路是让函数返回特殊的不属于有效范围内的值来表示出错:<br><span class="hljs-number">-1</span>或<span class="hljs-number">0</span> (在文件操作会看到大量的例子)<br>但是当任何数值都是有效的可能结果时，就得分开返回了<br>需要注意的是后续的语言(C++,Java) 采用了异常机制来解决这个问题<br></code></pre></td></tr></table></figure>
+<h2 id="指针最常见的错误">指针最常见的错误</h2>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">定义了指针变量，还没有指向任何变量，就开始使用指针<br></code></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>C语言</category>
@@ -126,23 +165,33 @@
   <entry>
     <title>Mac如何运行C语言</title>
     <url>/2019/02/24/C-Mac/</url>
-    <content><![CDATA[<h1 id="Mac如何运行C语言程序"><a href="#Mac如何运行C语言程序" class="headerlink" title="Mac如何运行C语言程序"></a>Mac如何运行C语言程序</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&emsp;&emsp;C语言是我第一个学习的开发语言，在中国大学生MOOC平台学习C语言开启了我的coding生涯，也认识了我很喜欢的一位老师，我个人很喜欢C给我带来的编程思想，这种思想中在后来学习其他语言的时候，让我受益无穷。c语言是最基本的语言。全世界的高级语言现在有两千多种，但是几乎全国大部分的高校都学习C语言，它的重要性可见一斑。很多高校选择C语言作为计算机相关专业入门的第一课，主要是因为C是编写操作系统最常用的编程语言。用C编写的第一个操作系统是大名鼎鼎的Unix，现在的MacOS正基于此。后来的操作系统如GNU/Linux都是用C语言编写的.C不仅是操作系统的语言，它还是当今几乎所有最流行的高级语言的前身和灵感。事实上，Perl，PHP，Python和Ruby都是用C语言编写的。<br>&emsp;&emsp;学习任何语言，关注的不应该是技术，而是技术的发展过程，技术背后那些看不见的东西，他们蕴含着无限可能和未来。</p>
-<h2 id="Mac下的第一个”Hello-world！”"><a href="#Mac下的第一个”Hello-world！”" class="headerlink" title="Mac下的第一个”Hello world！”"></a>Mac下的第一个”Hello world！”</h2><h3 id="打开终端"><a href="#打开终端" class="headerlink" title="打开终端"></a>打开终端</h3><p><img src="http://q7e8xd0qk.bkt.clouddn.com/blog/dSYnXu.png" alt="终端">  </p>
-<h3 id="打开指定文件夹"><a href="#打开指定文件夹" class="headerlink" title="打开指定文件夹"></a>打开指定文件夹</h3><p>例如：打开/Users/用户名/CStudy文件夹</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">$ cd &#x2F;Users&#x2F;用户名&#x2F;cStudy</span><br></pre></td></tr></table></figure></div>
-
-<p>当然，最简单的办法就是现在命令行输入”cd”<br>然后在fander窗口将文件夹图标拖到终端窗口，回车即可  </p>
-<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><p>输入 </p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">vim hello.c，</span><br></pre></td></tr></table></figure></div>
-<p>用vim编辑hello.c文件。再按i进入编辑状态<br>写入</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()&#123;</span><br><span class="line">        printf(&quot;hello world\n&quot;);</span><br><span class="line">        return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
+    <content><![CDATA[<h1>Mac如何运行C语言程序</h1>
+<h2 id="前言">前言</h2>
+<p>  C语言是我第一个学习的开发语言，在中国大学生MOOC平台学习C语言开启了我的coding生涯，也认识了我很喜欢的一位老师，我个人很喜欢C给我带来的编程思想，这种思想中在后来学习其他语言的时候，让我受益无穷。c语言是最基本的语言。全世界的高级语言现在有两千多种，但是几乎全国大部分的高校都学习C语言，它的重要性可见一斑。很多高校选择C语言作为计算机相关专业入门的第一课，主要是因为C是编写操作系统最常用的编程语言。用C编写的第一个操作系统是大名鼎鼎的Unix，现在的MacOS正基于此。后来的操作系统如GNU/Linux都是用C语言编写的.C不仅是操作系统的语言，它还是当今几乎所有最流行的高级语言的前身和灵感。事实上，Perl，PHP，Python和Ruby都是用C语言编写的。<br>
+  学习任何语言，关注的不应该是技术，而是技术的发展过程，技术背后那些看不见的东西，他们蕴含着无限可能和未来。</p>
+<h2 id="Mac下的第一个-Hello-world！">Mac下的第一个&quot;Hello world！&quot;</h2>
+<h3 id="打开终端">打开终端</h3>
+<p><img src="http://q7e8xd0qk.bkt.clouddn.com/blog/dSYnXu.png" alt="终端"></p>
+<h3 id="打开指定文件夹">打开指定文件夹</h3>
+<p>例如：打开/Users/用户名/CStudy文件夹</p>
+<figure class="highlight jboss-cli"><table><tr><td class="code"><pre><code class="hljs jboss-cli">$ <span class="hljs-keyword">cd</span> <span class="hljs-string">/Users/</span>用户名<span class="hljs-string">/cStudy</span><br></code></pre></td></tr></table></figure>
+<p>当然，最简单的办法就是现在命令行输入&quot;cd&quot;<br>
+然后在fander窗口将文件夹图标拖到终端窗口，回车即可</p>
+<h3 id="开始">开始</h3>
+<p>输入</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">vim</span> <span class="hljs-selector-tag">hello</span><span class="hljs-selector-class">.c</span>，<br></code></pre></td></tr></table></figure>
+<p>用vim编辑hello.c文件。再按i进入编辑状态<br>
+写入</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"hello world\n"</span>);<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>输入完毕后，保存并退出，先按“esc”键，然后输入:wq即可</p>
-<h3 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h3><p>输入命令  </p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">gcc hello.c</span><br></pre></td></tr></table></figure></div>
+<h3 id="编译">编译</h3>
+<p>输入命令</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">gcc</span> <span class="hljs-selector-tag">hello</span><span class="hljs-selector-class">.c</span><br></code></pre></td></tr></table></figure>
 <p>此时如果电脑上没有编译工具，点击安装即可；若程序有错误，则再次进入步骤2修改程序；若无错则进入下一步骤；</p>
-<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">.&#x2F;a.out hello.c</span><br></pre></td></tr></table></figure></div>
-<p>即可看到结果<br><img src="http://q7e8xd0qk.bkt.clouddn.com/blog/0yVDsL.png" alt="0yVDsL">  </p>
+<h3 id="运行">运行</h3>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><code class="hljs stylus">./<span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.out</span> hello.c<br></code></pre></td></tr></table></figure>
+<p>即可看到结果<br>
+<img src="http://q7e8xd0qk.bkt.clouddn.com/blog/0yVDsL.png" alt="0yVDsL"></p>
 ]]></content>
       <categories>
         <category>C语言</category>
