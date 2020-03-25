@@ -232,9 +232,9 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/%20" rel="section">
+          <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
             
             归档
           </a>
@@ -490,7 +490,13 @@
     
     
     
-
+    <div>
+         <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">--------🥳 这篇看完惹～ -------</div>
+    
+</div> 
+    </div>
     
 
     
@@ -501,11 +507,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Mac%E7%BB%88%E7%AB%AF/" rel="tag"># Mac终端</a>
+            <a href="/tags/Mac%E7%BB%88%E7%AB%AF/" rel="tag"><i class="fa fa-tag"></i> Mac终端</a>
           
-            <a href="/tags/C%E7%A8%8B%E5%BA%8F/" rel="tag"># C程序</a>
+            <a href="/tags/C%E7%A8%8B%E5%BA%8F/" rel="tag"><i class="fa fa-tag"></i> C程序</a>
           
-            <a href="/tags/Hello-world/" rel="tag"># Hello world</a>
+            <a href="/tags/Hello-world/" rel="tag"><i class="fa fa-tag"></i> Hello world</a>
           
         </div>
       
@@ -545,31 +551,43 @@
 
     <div class="post-spread">
       
-        <!-- JiaThis Button BEGIN -->
-<div class="jiathis_style">
-<span class="jiathis_txt">分享到：</span>
-<a class="jiathis_button_fav">收藏夹</a>
-<a class="jiathis_button_copy">复制网址</a>
-<a class="jiathis_button_email">邮件</a>
-<a class="jiathis_button_weixin">微信</a>
-<a class="jiathis_button_qzone">QQ空间</a>
-<a class="jiathis_button_tqq">腾讯微博</a>
-<a class="jiathis_button_douban">豆瓣</a>
-<a class="jiathis_button_share">一键分享</a>
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
 
-<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
-<a class="jiathis_counter_style"></a>
-</div>
-<script type="text/javascript" >
-var jiathis_config={
-  data_track_clickback:true,
-  summary:"",
-  shortUrl:false,
-  hideMore:false
-}
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
 </script>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
-<!-- JiaThis Button END -->
+
       
     </div>
   </div>
@@ -636,7 +654,7 @@ var jiathis_config={
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/%20%7C%7C%20archive">
+                <a href="/archives/">
               
                   <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
@@ -722,6 +740,20 @@ var jiathis_config={
           
 
           
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                收藏网站
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.baidu.com/" title="百度" target="_blank">百度</a>
+                  </li>
+                
+              </ul>
+            </div>
           
 
           
@@ -960,7 +992,7 @@ setInterval("createtime()",250);
         notify: true,
         appId: 'alajtPMMmoo8qtvFcftibUHQ-gzGzoHsz',
         appKey: 'SnpP3hiG9aEsfl3OXWVhXQNQ',
-        placeholder: '欢迎评论留言，为了安全起见，请同时留下你的邮箱，我会回复你。',
+        placeholder: '欢迎评论留言，但是为了安全起见，请同时留下你的邮箱，我会回复你。',
         avatar:'monsterid',
         guest_info:guest,
         pageSize:'10' || 10,
