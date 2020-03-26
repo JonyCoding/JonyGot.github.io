@@ -2,119 +2,147 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2019/02/24/js-tab/</loc>
+    <loc>http://yoursite.com/2019/02/24/php/php-pdd/</loc>
+    
+    <lastmod>2020-03-26T10:52:24.353Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/02/24/php/php-MVC/</loc>
+    
+    <lastmod>2020-03-26T10:52:11.803Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/02/24/php/php-qiandao/</loc>
+    
+    <lastmod>2020-03-26T10:51:58.909Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/02/24/php/php-zhuce/</loc>
+    
+    <lastmod>2020-03-26T10:51:46.715Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/02/24/js/js-mengban/</loc>
+    
+    <lastmod>2020-03-26T05:30:51.614Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/02/24/js/js-tab/</loc>
     
     <lastmod>2020-03-26T05:18:27.663Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2019/02/24/js-shoufq/</loc>
+    <loc>http://yoursite.com/2019/02/24/js/js-shoufq/</loc>
     
     <lastmod>2020-03-26T05:17:47.291Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2019/02/24/js-P5BG/</loc>
+    <loc>http://yoursite.com/2019/02/24/js/js-P5BG/</loc>
     
     <lastmod>2020-03-26T05:17:29.849Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2019/02/24/js-mengban/</loc>
-    
-    <lastmod>2020-03-26T05:16:53.053Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2019/02/24/js-lunbotu/</loc>
+    <loc>http://yoursite.com/2019/02/24/js/js-lunbotu/</loc>
     
     <lastmod>2020-03-26T05:16:00.793Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2019/02/24/js-lunbo/</loc>
+    <loc>http://yoursite.com/2019/02/24/js/js-lunbo/</loc>
     
     <lastmod>2020-03-26T05:15:35.007Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2019/02/24/js-huoqu/</loc>
+    <loc>http://yoursite.com/2019/02/24/js/js-huoqu/</loc>
     
     <lastmod>2020-03-26T05:15:12.933Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2019/02/24/js-caidan/</loc>
+    <loc>http://yoursite.com/2019/02/24/js/js-caidan/</loc>
     
     <lastmod>2020-03-26T05:14:50.800Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2019/02/24/js-biaodan/</loc>
+    <loc>http://yoursite.com/2019/02/24/js/js-biaodan/</loc>
     
     <lastmod>2020-03-26T05:14:35.261Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2019/02/24/js-show/</loc>
+    <loc>http://yoursite.com/2019/02/24/js/js-show/</loc>
     
     <lastmod>2020-03-26T05:13:56.370Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2019/02/24/js-redom/</loc>
+    <loc>http://yoursite.com/2019/02/24/js/js-redom/</loc>
     
     <lastmod>2020-03-26T05:13:36.041Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/01/06/wx-bushu%206/</loc>
+    <loc>http://yoursite.com/2020/01/06/wx/wx-bushu%206/</loc>
     
     <lastmod>2020-03-26T00:17:06.430Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/01/22/wx-denglu/</loc>
+    <loc>http://yoursite.com/2020/01/22/wx/wx-denglu/</loc>
     
     <lastmod>2020-03-26T00:16:48.993Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/01/16/wx-tiaozhuan/</loc>
+    <loc>http://yoursite.com/2020/01/16/wx/wx-tiaozhuan/</loc>
     
     <lastmod>2020-03-26T00:13:44.952Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/02/23/wx-bushu/</loc>
+    <loc>http://yoursite.com/2020/02/23/wx/wx-bushu/</loc>
     
     <lastmod>2020-03-26T00:13:42.724Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/02/13/wx-zhuce/</loc>
+    <loc>http://yoursite.com/2020/02/13/wx/wx-zhuce/</loc>
     
     <lastmod>2020-03-26T00:12:38.593Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/01/06/wx-chuanzhi/</loc>
+    <loc>http://yoursite.com/2020/01/06/wx/wx-chuanzhi/</loc>
     
     <lastmod>2020-03-26T00:05:52.607Z</lastmod>
     
@@ -149,28 +177,28 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2019/03/05/C-lianbiao/</loc>
+    <loc>http://yoursite.com/2019/03/05/C/C-lianbiao/</loc>
     
     <lastmod>2020-03-24T16:38:06.035Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2019/02/28/C-shuzu/</loc>
+    <loc>http://yoursite.com/2019/02/28/C/C-shuzu/</loc>
     
     <lastmod>2020-03-24T16:37:37.403Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2019/02/28/C-zhizhen/</loc>
+    <loc>http://yoursite.com/2019/02/28/C/C-zhizhen/</loc>
     
     <lastmod>2020-03-24T16:37:26.539Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2019/02/24/C-Mac/</loc>
+    <loc>http://yoursite.com/2019/02/24/C/C-Mac/</loc>
     
     <lastmod>2020-03-24T16:36:01.869Z</lastmod>
     
