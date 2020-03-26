@@ -1928,7 +1928,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #30ff93;
+  background: #a14528;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3297,6 +3297,9 @@ a {
   }
 }
 @media (max-width: 1000px) {
+  .posts-expand .post-meta {
+    font-size: 15px !important;
+  }
   body {
     font-size: 14px;
   }
