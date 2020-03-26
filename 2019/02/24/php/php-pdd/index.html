@@ -94,20 +94,20 @@
 <meta property="og:url" content="http://yoursite.com/2019/02/24/php/php-pdd/index.html">
 <meta property="og:site_name" content="Jony&#39;s blog">
 <meta property="og:description" content="如何使用PHP调用拼多多API 如何在自己开发的项目中调用拼多多接口 注册多多进宝开发者 打开多多进宝官网多多进宝进行注册，并实名制认证，基本操作不多赘述。 下载sdk  下载好官方给的sdk压缩包，并解压到PHP解析目录，我这里将PHP解析目录放在了&#x2F;user &#x2F;PHP&#x2F; 目录文件夹下。  使用composer安装包依赖 tip:因为作者使用的是MacOS，以下为MacOS示例，Windows大">
-<meta property="og:image" content="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/DYOT0T.png">
-<meta property="og:image" content="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/pik6vk.png">
-<meta property="og:image" content="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/SkdFWd.png">
-<meta property="og:image" content="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/2F0518BA8F26C2BDDB80E77DAB73D91E.jpg">
-<meta property="og:image" content="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/YPKJTq.png">
-<meta property="og:image" content="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/E9BB4582-7251-4E9A-91E1-937FE5A40C80.png">
-<meta property="og:image" content="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/tAARtf.png">
-<meta property="og:image" content="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/NFxXLZ.png">
+<meta property="og:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/DYOT0T.png">
+<meta property="og:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/pik6vk.png">
+<meta property="og:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/SkdFWd.png">
+<meta property="og:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/2F0518BA8F26C2BDDB80E77DAB73D91E.jpg">
+<meta property="og:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/YPKJTq.png">
+<meta property="og:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/E9BB4582-7251-4E9A-91E1-937FE5A40C80.png">
+<meta property="og:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/tAARtf.png">
+<meta property="og:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/NFxXLZ.png">
 <meta property="article:published_time" content="2019-02-24T01:02:13.000Z">
-<meta property="article:modified_time" content="2020-03-26T10:52:24.353Z">
+<meta property="article:modified_time" content="2020-03-26T14:48:42.367Z">
 <meta property="article:author" content="Jony">
 <meta property="article:tag" content="PHP实战">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/DYOT0T.png">
+<meta name="twitter:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/DYOT0T.png">
 
 
 
@@ -466,9 +466,9 @@
 <h2 id="注册多多进宝开发者">注册多多进宝开发者</h2>
 <p>打开多多进宝官网<a href="https://jinbao.pinduoduo.com/" target="_blank" rel="noopener">多多进宝</a>进行注册，并实名制认证，基本操作不多赘述。</p>
 <h2 id="下载sdk">下载sdk</h2>
-<p><img src="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/DYOT0T.png" alt="DYOT0T"><br>
+<p><img src="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/DYOT0T.png" alt="DYOT0T"><br>
 下载好官方给的sdk压缩包，并解压到PHP解析目录，我这里将PHP解析目录放在了/user /PHP/ 目录文件夹下。<br>
-<img src="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/pik6vk.png" alt="pik6vk"></p>
+<img src="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/pik6vk.png" alt="pik6vk"></p>
 <h2 id="使用composer安装包依赖">使用composer安装包依赖</h2>
 <p>tip:因为作者使用的是MacOS，以下为MacOS示例，Windows大同小异。</p>
 <ol>
@@ -485,7 +485,7 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql">php composer.phar <span class="hljs-keyword">install</span>   //按回车会出现以下代码则安装依赖成功<br>Loading composer repositories <span class="hljs-keyword">with</span> <span class="hljs-keyword">package</span> information<br>Installing dependencies (<span class="hljs-keyword">including</span> require-dev) <span class="hljs-keyword">from</span> <span class="hljs-keyword">lock</span> <span class="hljs-keyword">file</span><br><span class="hljs-keyword">Nothing</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">install</span> <span class="hljs-keyword">or</span> <span class="hljs-keyword">update</span><br>Generating autoload files<br></code></pre></td></tr></table></figure>
 <p>此处已经安装成功，使用composer对src下面的代码进行命名空间自动导入打开文件夹会发现多了一个vendor文件。</p>
 <h2 id="文件夹解读">文件夹解读</h2>
-<p><img src="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/SkdFWd.png" alt="SkdFWd"></p>
+<p><img src="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/SkdFWd.png" alt="SkdFWd"></p>
 <h3 id="example">example</h3>
 <p>这个文件夹主要存放已经写好的方法，直接在URL中调用对用的PHP文件就行，但是里面的方法并不是适合每个开发者或者说每个项目，所以需要自行进行一些简单修改。</p>
 <ul>
@@ -529,18 +529,18 @@
 <ol>
 <li>打开多多进宝控制台</li>
 </ol>
-<p><img src="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/2F0518BA8F26C2BDDB80E77DAB73D91E.jpg" alt="2F0518BA8F26C2BDDB80E77DAB73D91E"></p>
+<p><img src="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/2F0518BA8F26C2BDDB80E77DAB73D91E.jpg" alt="2F0518BA8F26C2BDDB80E77DAB73D91E"></p>
 <p>点击推手推广效果<br>
-<img src="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/YPKJTq.png" alt="YPKJTq"></p>
+<img src="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/YPKJTq.png" alt="YPKJTq"></p>
 <p>点击推广位，新建一个推广位，确认后会获取到一个PID,个人建议把这个PID存在备忘录，后面调用接口会涉及到很多使用PID的情况。格式[11111_11111]</p>
 <ol start="2">
 <li>打开拼多多开放平台</li>
 </ol>
 <p>打开控制台，我的应用创建一个应用<br>
-<img src="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/E9BB4582-7251-4E9A-91E1-937FE5A40C80.png" alt="E9BB4582-7251-4E9A-91E1-937FE5A40C80"></p>
+<img src="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/E9BB4582-7251-4E9A-91E1-937FE5A40C80.png" alt="E9BB4582-7251-4E9A-91E1-937FE5A40C80"></p>
 <p>tip:需要实名制注册认证</p>
 <p>创建成功后点击查看详情-&gt;应用信息-&gt;找到client_ id和 _secret,<br>
-<img src="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/tAARtf.png" alt="tAARtf"><br>
+<img src="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/tAARtf.png" alt="tAARtf"><br>
 同样，我建议把这个也保存起来在备忘录，一面后续麻烦。</p>
 <ol start="3">
 <li>在PDD—SDK中输入信息</li>
@@ -557,7 +557,7 @@
 <p>打开浏览器，输入</p>
 <figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs avrasm"><span class="hljs-symbol">http:</span>//localhost/PDD-sdk/example/PddDdkGoodsSearch.php?serch=<span class="hljs-string">"关键字"</span><br>（PHP服务器地址如果你有端口修改请自行调整）<br></code></pre></td></tr></table></figure>
 <p>即可查看返回的Json结果（这里使用了json美化工具，你感兴趣可以查看我的另一篇文章<a href="">如何优雅的使用chrome</a>）<br>
-<img src="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/NFxXLZ.png" alt="NFxXLZ"><br>
+<img src="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/NFxXLZ.png" alt="NFxXLZ"><br>
 在此就算完成了拼多多接口调用</p>
 <p>更多接口调用方法，请移步<a href="https://open.pinduoduo.com/#/apidocument" target="_blank" rel="noopener">拼多多API说明文档</a></p>
 <h1>以上</h1>
@@ -598,8 +598,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/24/php/php-qiandao/" rel="next" title="PHP-连续签到功能实现">
-                <i class="fa fa-chevron-left"></i> PHP-连续签到功能实现
+              <a href="/2019/02/24/tip/tip-mysqlqy/" rel="next" title="tip-数据库迁移错误">
+                <i class="fa fa-chevron-left"></i> tip-数据库迁移错误
               </a>
             
           </div>
@@ -608,8 +608,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/02/24/js/js-show/" rel="prev" title="javaScript实现菜单栏">
-                javaScript实现菜单栏 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/24/php/php-zhuce/" rel="prev" title="PHP-小程序注册后台实现">
+                PHP-小程序注册后台实现 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -734,7 +734,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -745,7 +745,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -756,7 +756,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -887,7 +887,7 @@
 </div>
 <div class="copyright">
   <div class="powered-by"></div>
-  <span class="post-count">✍️ 收录16.6k个字</span>
+  <span class="post-count">✍️ 收录18.2k个字</span>
 </div>
 <!-- 在网页底部添加网站运行时间 -->
 

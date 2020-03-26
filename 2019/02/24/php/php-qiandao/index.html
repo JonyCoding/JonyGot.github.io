@@ -94,15 +94,15 @@
 <meta property="og:url" content="http://yoursite.com/2019/02/24/php/php-qiandao/index.html">
 <meta property="og:site_name" content="Jony&#39;s blog">
 <meta property="og:description" content="小程序连续签到PHP PHP后台控制器 本实例使用thinkPHP作为框架开发，使用mysql数据库，主要作为微信小程序签到的后台实现代码。 12345678910111213141516171819202122232425262728293031323334353637383940namespace Api\Controller;use Think\Controller;class SignCo">
-<meta property="og:image" content="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/2U3WRX.png">
-<meta property="og:image" content="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/NBvc2S.png">
+<meta property="og:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/2U3WRX.png">
+<meta property="og:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/NBvc2S.png">
 <meta property="article:published_time" content="2019-02-24T01:02:13.000Z">
-<meta property="article:modified_time" content="2020-03-26T10:51:58.909Z">
+<meta property="article:modified_time" content="2020-03-26T14:48:45.450Z">
 <meta property="article:author" content="Jony">
 <meta property="article:tag" content="PHP实战">
 <meta property="article:tag" content="小程序开发">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/2U3WRX.png">
+<meta name="twitter:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/2U3WRX.png">
 
 
 
@@ -461,7 +461,7 @@
 <p>本实例使用thinkPHP作为框架开发，使用mysql数据库，主要作为微信小程序签到的后台实现代码。</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">Api</span>\<span class="hljs-title">Controller</span>;<br><span class="hljs-keyword">use</span> <span class="hljs-title">Think</span>\<span class="hljs-title">Controller</span>;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SignController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span> </span>&#123;<br><span class="hljs-comment">//获取今天的日期</span><br><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">signin</span><span class="hljs-params">()</span> </span>&#123;<br>$today = date(<span class="hljs-string">'Ymd'</span>);<br>$num = I(<span class="hljs-string">"sum"</span>);<br>$lntegral = I(<span class="hljs-string">"lntegral"</span>);<br>$openid = I(<span class="hljs-string">"openid"</span>);<br>$signin = M(<span class="hljs-string">'signin'</span>);<br><span class="hljs-comment">//获取签到记录</span><br>$signInfo = $signin-&gt;field(<span class="hljs-string">'num,times,lntegral'</span>)-&gt;where(<span class="hljs-keyword">array</span>(<span class="hljs-string">'openid'</span> =&gt; $openid))-&gt;find();<br><span class="hljs-keyword">if</span>(!$num)&#123;<br>	 <span class="hljs-keyword">$this</span>-&gt;ajaxReturn(<span class="hljs-keyword">array</span>(<span class="hljs-string">'num'</span> =&gt; $signInfo[<span class="hljs-string">'num'</span>], <span class="hljs-string">'status'</span> =&gt; <span class="hljs-number">0</span>,<span class="hljs-string">'lntegral'</span> =&gt; $signInfo[<span class="hljs-string">'lntegral'</span>]));<br>&#125;<span class="hljs-keyword">else</span> &#123;<span class="hljs-comment">//如果只GRET到openid那么只返回签到天数</span><br><span class="hljs-keyword">if</span>($signInfo[<span class="hljs-string">'times'</span>] == $today)&#123;<span class="hljs-comment">//今天已签到过了</span><br>    <span class="hljs-keyword">$this</span>-&gt;ajaxReturn(<span class="hljs-keyword">array</span>(<span class="hljs-string">'info'</span> =&gt; <span class="hljs-string">'今天已签到过了'</span>, <span class="hljs-string">'status'</span> =&gt; <span class="hljs-number">0</span>));<br>&#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>($signInfo[<span class="hljs-string">'num'</span>])&#123;<br><span class="hljs-comment">//更新签到记录</span><br>    $result = $signin-&gt; where([<span class="hljs-string">'openid'</span> =&gt; $openid])-&gt;save(<span class="hljs-keyword">array</span>(<span class="hljs-string">'num'</span> =&gt; $num , <span class="hljs-string">'times'</span> =&gt; $today ,<span class="hljs-string">'lntegral'</span> =&gt; $signInfo[<span class="hljs-string">'lntegral'</span>]+$lntegral));<br>	<span class="hljs-keyword">if</span>($result)&#123;<br>		<span class="hljs-keyword">if</span>($num &lt; <span class="hljs-number">7</span>)&#123;<br>        	$msg = <span class="hljs-string">'获得[1]积分'</span>;<br>		&#125;<span class="hljs-keyword">else</span>&#123;<br>			$msg = <span class="hljs-string">'获得[3]积分'</span>;<br>		&#125;<br>        <span class="hljs-keyword">$this</span>-&gt;ajaxReturn(<span class="hljs-keyword">array</span>(<span class="hljs-string">'success'</span> =&gt; <span class="hljs-keyword">True</span>,<span class="hljs-string">'info'</span> =&gt; $msg, <span class="hljs-string">'status'</span> =&gt; <span class="hljs-number">1</span>));<br>    &#125;<br>&#125;<span class="hljs-keyword">else</span>&#123;Ï<br>        $result = $signin-&gt; where(<span class="hljs-keyword">array</span>(<span class="hljs-string">'openid'</span> =&gt; $openid)) -&gt;add(<span class="hljs-keyword">array</span>(<span class="hljs-string">'openid'</span> =&gt; $openid, <span class="hljs-string">'num'</span> =&gt; <span class="hljs-number">1</span>, <span class="hljs-string">'times'</span> =&gt; $today ,<span class="hljs-string">'lntegral'</span> =&gt;  <span class="hljs-number">1</span>));<br>		<span class="hljs-keyword">if</span> ($result)&#123;<br>        $msg = <span class="hljs-string">'签到记录已创建'</span>;<br>        <span class="hljs-keyword">$this</span>-&gt;ajaxReturn(<span class="hljs-keyword">array</span>(<span class="hljs-string">'success'</span> =&gt; <span class="hljs-keyword">True</span>,<span class="hljs-string">'info'</span> =&gt; $msg, <span class="hljs-string">'status'</span> =&gt; <span class="hljs-number">1</span>));<br>      &#125;<br>    &#125;<br>    <span class="hljs-keyword">$this</span>-&gt;ajaxReturn(<span class="hljs-keyword">array</span>(<span class="hljs-string">'info'</span> =&gt; <span class="hljs-string">'TxT签到失败惹'</span>, <span class="hljs-string">'status'</span> =&gt; <span class="hljs-number">0</span>));<br>       &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h2 id="数据库表的实现">数据库表的实现</h2>
-<p><img src="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/2U3WRX.png" alt="2U3WRX"></p>
+<p><img src="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/2U3WRX.png" alt="2U3WRX"></p>
 <ul>
 <li>openid记录用户的身份信息</li>
 <li>num是签到数</li>
@@ -471,7 +471,7 @@
 <h2 id="微信小程序js代码实现">微信小程序js代码实现</h2>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs js">bindSignIn(e) &#123;<br>    <span class="hljs-keyword">var</span> that = <span class="hljs-keyword">this</span>;<br>    <span class="hljs-keyword">var</span> num = e.currentTarget.dataset.num;<br>    <span class="hljs-keyword">var</span> be = e.currentTarget.dataset.be;<br>    num++;<br>    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.data.de == <span class="hljs-number">0</span>) &#123;<br>      <span class="hljs-keyword">this</span>.setData(&#123;<br>        lntegral: <span class="hljs-number">1</span><br>      &#125;)<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>      <span class="hljs-keyword">this</span>.setData(&#123;<br>        lntegral: <span class="hljs-number">3</span><br>      &#125;)<br>    &#125;<br><br>    wx.request(&#123;<br>      url: signUrl + <span class="hljs-string">"signin"</span>,<br>      data: &#123;<br>        sum: num,<br>        lntegral: that.data.lntegral,<br>        openid: wx.getStorageSync(<span class="hljs-string">'OPENID'</span>),<br>      &#125;,<br>      success: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">sum</span>) </span>&#123;<br>        <span class="hljs-keyword">if</span> (sum.data.status) &#123;<br>          that.setData(&#123;<br>            signNum: num,<br>            signState: <span class="hljs-literal">false</span>,<br>          &#125;)<br>          wx.showToast(&#123;<br>            icon: <span class="hljs-string">'success'</span>,<br>            title: sum.data.info,<br>          &#125;)<br>      &#125;<br>    &#125;)<br>  &#125;,<br></code></pre></td></tr></table></figure>
 <p>根据不同请求状态，PHP处理后台数据返回不同的内容，通过wx.showToast()方法输出给用户。效果如下：</p>
-<p><img src="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/NBvc2S.png" alt="NBvc2S"></p>
+<p><img src="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/NBvc2S.png" alt="NBvc2S"></p>
 
       
     </div>
@@ -510,8 +510,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/24/php/php-zhuce/" rel="next" title="PHP-小程序注册后台实现">
-                <i class="fa fa-chevron-left"></i> PHP-小程序注册后台实现
+              <a href="/2019/02/24/tip/tip-ympy/" rel="next" title="tip-小程序页面漂移">
+                <i class="fa fa-chevron-left"></i> tip-小程序页面漂移
               </a>
             
           </div>
@@ -520,8 +520,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/02/24/php/php-pdd/" rel="prev" title="PHP-拼多多后台接入及实现">
-                PHP-拼多多后台接入及实现 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/24/tip/tip-mysqlqy/" rel="prev" title="tip-数据库迁移错误">
+                tip-数据库迁移错误 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -646,7 +646,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -657,7 +657,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -668,7 +668,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -799,7 +799,7 @@
 </div>
 <div class="copyright">
   <div class="powered-by"></div>
-  <span class="post-count">✍️ 收录16.6k个字</span>
+  <span class="post-count">✍️ 收录18.2k个字</span>
 </div>
 <!-- 在网页底部添加网站运行时间 -->
 

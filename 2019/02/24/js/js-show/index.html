@@ -94,14 +94,14 @@
 <meta property="og:url" content="http://yoursite.com/2019/02/24/js/js-show/index.html">
 <meta property="og:site_name" content="Jony&#39;s blog">
 <meta property="og:description" content="javaScript原生代码实现隐藏和显示 tab选项卡 通过控制盒子的隐藏显示来实现 JS部分 1234567891011121314151617181920212223function showtab(n)&amp;#123;				var t1&#x3D;document.getElementById(&quot;tab1&quot;);	var t2&#x3D;document.getElementById(&quot;tab2&quot;);	var t">
-<meta property="og:image" content="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/tb567l.png">
+<meta property="og:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/tb567l.png">
 <meta property="article:published_time" content="2019-02-24T01:02:13.000Z">
-<meta property="article:modified_time" content="2020-03-26T05:13:56.370Z">
+<meta property="article:modified_time" content="2020-03-26T14:48:22.608Z">
 <meta property="article:author" content="Jony">
 <meta property="article:tag" content="javaScript技巧">
 <meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/tb567l.png">
+<meta name="twitter:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/tb567l.png">
 
 
 
@@ -463,7 +463,7 @@
 <p>html部分</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"yuan-tab"</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"tab-top"</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>					<span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">onmouseover</span>=<span class="hljs-string">"showtab(1)"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"change()"</span>&gt;</span>手机<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>					<span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">onmouseover</span>=<span class="hljs-string">"showtab(2)"</span>&gt;</span>数码<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>					<span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">onmouseover</span>=<span class="hljs-string">"showtab(3)"</span>&gt;</span>咨询<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>				<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br>			<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"tab1"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tab-content"</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"tab2"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tab-content none"</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"tab3"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tab-content none"</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>		<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <p>实现效果<br>
-<img src="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/tb567l.png" alt="tb567l"></p>
+<img src="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/tb567l.png" alt="tb567l"></p>
 <h2 id="下拉菜单">下拉菜单</h2>
 <p>通过使用onmouseover=&quot;showmenu()&quot;方法，当鼠标放入的时候执行函数，让盒子显示和隐藏</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showmenu</span>(<span class="hljs-params"></span>)</span>&#123;<br>	<span class="hljs-keyword">var</span> box=<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"box"</span>)<br>	box.style.display=<span class="hljs-string">"block"</span>;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hidemenu</span>(<span class="hljs-params"></span>)</span>&#123;<br>	<span class="hljs-keyword">var</span> box=<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"box"</span>)<br>	box.style.display=<span class="hljs-string">"none"</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
@@ -514,8 +514,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/24/php/php-pdd/" rel="next" title="PHP-拼多多后台接入及实现">
-                <i class="fa fa-chevron-left"></i> PHP-拼多多后台接入及实现
+              <a href="/2019/02/24/js/js-tab/" rel="next" title="javaScript-tab选项卡">
+                <i class="fa fa-chevron-left"></i> javaScript-tab选项卡
               </a>
             
           </div>
@@ -650,7 +650,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -661,7 +661,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -672,7 +672,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -803,7 +803,7 @@
 </div>
 <div class="copyright">
   <div class="powered-by"></div>
-  <span class="post-count">✍️ 收录16.6k个字</span>
+  <span class="post-count">✍️ 收录18.2k个字</span>
 </div>
 <!-- 在网页底部添加网站运行时间 -->
 

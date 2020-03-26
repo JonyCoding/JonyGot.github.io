@@ -94,16 +94,16 @@
 <meta property="og:url" content="http://yoursite.com/2020/01/22/wx/wx-denglu/index.html">
 <meta property="og:site_name" content="Jony&#39;s blog">
 <meta property="og:description" content="授权页面 小程序登录 小程序可以通过微信官方提供的登录能力方便地获取微信提供的用户身份标 识，快速建立小程序内的用户体系。如图所示，小程序通过wx.login()获取code， 然后通过*wx.request()*发送 code 至开发者服务器，开发者服务器将登录凭证 appid、 appsecret与code用于校验微信接口，微信接口服务向开发者服务器返回用户唯一 标识 OpenID和会话密钥s">
-<meta property="og:image" content="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/urFvwF.png">
-<meta property="og:image" content="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/kpFd4f.png">
-<meta property="og:image" content="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/MUcsiq.png">
+<meta property="og:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/urFvwF.png">
+<meta property="og:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/kpFd4f.png">
+<meta property="og:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/MUcsiq.png">
 <meta property="article:published_time" content="2020-01-22T15:34:26.000Z">
-<meta property="article:modified_time" content="2020-03-26T00:16:48.993Z">
+<meta property="article:modified_time" content="2020-03-26T14:49:02.283Z">
 <meta property="article:author" content="Jony">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="小程序开发">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/urFvwF.png">
+<meta name="twitter:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/urFvwF.png">
 
 
 
@@ -461,7 +461,7 @@
 <h2 id="小程序登录">小程序登录</h2>
 <p>小程序可以通过微信官方提供的登录能力方便地获取微信提供的用户身份标<br>
 识，快速建立小程序内的用户体系。如图所示，小程序通过wx.login()获取code， 然后通过*wx.request()*发送 code 至开发者服务器，开发者服务器将登录凭证 <strong>appid、 appsecret</strong>与<strong>code</strong>用于校验微信接口，微信接口服务向开发者服务器返回用户唯一 标识 <strong>OpenID</strong>和会话密钥session—key。开发者服务器实现自定义登录状态与 openid 与 session_key关联，并向小程序返回自定义状态。小程序将自定义登录状态 存入 storage，并用于后续 wx.request 发起业务请求。<br>
-<img src="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/urFvwF.png" alt="urFvwF"><br>
+<img src="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/urFvwF.png" alt="urFvwF"><br>
 对于某个微信小程序，每个用户访问该小程序都有产生一个唯一的 openid，这 个 openid 为用户访问该小程序的标识符，即每个用户的 openid 都是不一样的。因 此，可以把 **openid **作为用户唯一标识符(类似身份证号)，并存于数据库中用以后续操作。</p>
 <h2 id="wx-login">wx.login()</h2>
 <p>调用wx.login()接口获取登录凭证(code),通过凭证进而换取用户登录态信息,其中wx.login( )接口</p>
@@ -505,7 +505,7 @@
 <h2 id="wx-request">wx.request()</h2>
 <h3 id="这个函数很重要，一定要很熟练">!!!这个函数很重要，一定要很熟练</h3>
 <p>wx.request( )主要用于发送 https 网络请求,一些基本属性表<br>
-<img src="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/kpFd4f.png" alt="kpFd4f"><br>
+<img src="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/kpFd4f.png" alt="kpFd4f"><br>
 在实际应用中，最常用的还是<em><strong>URL</strong></em>和<em><strong>data</strong></em>，这两项作为向后台发送数据请求的链接地址和传送的参数，重要程度可见一斑，后台接收数据的方式一般为GET方法。</p>
 <p>success回调函数也很重要，通过判断是否调用成功，来做相应的动作，比如回掉成功之后为data赋值：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js">wx.request(&#123;<br>  url: userUrl + <span class="hljs-string">'getInfo'</span>,<br>  data: &#123;<br>    <span class="hljs-string">'openid'</span>: res.data.openid,<br>  &#125;,<br>  success: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">res1</span>) </span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"用户信息app.js"</span>, res1)<br>    wx.setStorageSync(<span class="hljs-string">'userinfo'</span>, res1.data.data)<br>  &#125;,<br>&#125;)<br></code></pre></td></tr></table></figure>
@@ -577,7 +577,7 @@
 <h2 id="wx-showModal">wx.showModal()</h2>
 <p>小程序使用 wx.showModel(Object object)显示模态对话框<br>
 基本参数：<br>
-<img src="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/MUcsiq.png" alt="MUcsiq"><br>
+<img src="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/MUcsiq.png" alt="MUcsiq"><br>
 例如嗅券小程序，当发现没有用户未注册，则跳转出注册窗口提示用户注册</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">if</span> (!res.data.is_register) &#123; wx.showModal(&#123;<br>title: <span class="hljs-string">'提示'</span>,<br>content: <span class="hljs-string">'请先注册'</span>, <span class="hljs-attr">showCancel</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">confirmText</span>: <span class="hljs-string">"确定"</span>, <span class="hljs-attr">success</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>&#123;<br>wx.navigateTo(&#123;<br>url: <span class="hljs-string">'/pages/register/userlogin'</span>, &#125;)<br>&#125; &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
 
@@ -754,7 +754,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -765,7 +765,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -776,7 +776,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -907,7 +907,7 @@
 </div>
 <div class="copyright">
   <div class="powered-by"></div>
-  <span class="post-count">✍️ 收录16.6k个字</span>
+  <span class="post-count">✍️ 收录18.2k个字</span>
 </div>
 <!-- 在网页底部添加网站运行时间 -->
 

@@ -94,14 +94,14 @@
 <meta property="og:url" content="http://yoursite.com/2019/02/24/js/js-huoqu/index.html">
 <meta property="og:site_name" content="Jony&#39;s blog">
 <meta property="og:description" content="js如何获取点击数据 1234567$(document).ready(function()&amp;#123;	$(&quot;.list&quot;).click(function()&amp;#123;		var index&#x3D;$(&quot;.list&quot;).index(this);		$(&quot;.list&quot;).eq(index).toggleClass(&quot;clicked&quot;);		$(&quot;.amount&quot;).html(index+1);	&amp;#1">
-<meta property="og:image" content="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/H9AzAC.png">
+<meta property="og:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/H9AzAC.png">
 <meta property="article:published_time" content="2019-02-24T01:02:13.000Z">
-<meta property="article:modified_time" content="2020-03-26T05:15:12.933Z">
+<meta property="article:modified_time" content="2020-03-26T14:48:13.528Z">
 <meta property="article:author" content="Jony">
 <meta property="article:tag" content="javaScript技巧">
 <meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/H9AzAC.png">
+<meta name="twitter:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/H9AzAC.png">
 
 
 
@@ -459,7 +459,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js">$(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<br>	$(<span class="hljs-string">".list"</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<br>		<span class="hljs-keyword">var</span> index=$(<span class="hljs-string">".list"</span>).index(<span class="hljs-keyword">this</span>);<br>		$(<span class="hljs-string">".list"</span>).eq(index).toggleClass(<span class="hljs-string">"clicked"</span>);<br>		$(<span class="hljs-string">".amount"</span>).html(index+<span class="hljs-number">1</span>);<br>	&#125;)<br>&#125;)<br></code></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>点击的的是第<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"amount"</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>个盒子<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <p>实现效果：<br>
-<img src="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/H9AzAC.png" alt="H9AzAC"></p>
+<img src="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/H9AzAC.png" alt="H9AzAC"></p>
 
       
     </div>
@@ -634,7 +634,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -645,7 +645,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -656,7 +656,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -787,7 +787,7 @@
 </div>
 <div class="copyright">
   <div class="powered-by"></div>
-  <span class="post-count">✍️ 收录16.6k个字</span>
+  <span class="post-count">✍️ 收录18.2k个字</span>
 </div>
 <!-- 在网页底部添加网站运行时间 -->
 

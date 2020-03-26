@@ -94,16 +94,16 @@
 <meta property="og:url" content="http://yoursite.com/2020/02/13/wx/wx-zhuce/index.html">
 <meta property="og:site_name" content="Jony&#39;s blog">
 <meta property="og:description" content="微信官方 UI 库 WeUI库的使用 WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为 微信内网页和微信小程序量身设计，令用户的使用感知更加统一。包含 button、cell、 dialog、 progress、 toast、article、actionsheet、icon 等各式元素。WeUI 基础样式 库下载地址: github-小程序WeUI样式库 开发者可以将样式库">
-<meta property="og:image" content="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/z4iw2i.png">
-<meta property="og:image" content="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/KfAjHn.png">
-<meta property="og:image" content="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/Y6bmxF.png">
+<meta property="og:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/z4iw2i.png">
+<meta property="og:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/KfAjHn.png">
+<meta property="og:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/Y6bmxF.png">
 <meta property="article:published_time" content="2020-02-13T07:34:13.000Z">
-<meta property="article:modified_time" content="2020-03-26T00:12:38.593Z">
+<meta property="article:modified_time" content="2020-03-26T14:49:07.577Z">
 <meta property="article:author" content="Jony">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="小程序开发">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/z4iw2i.png">
+<meta name="twitter:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/z4iw2i.png">
 
 
 
@@ -461,9 +461,9 @@
 <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为 微信内网页和微信小程序量身设计，令用户的使用感知更加统一。包含 button、cell、 dialog、 progress、 toast、article、actionsheet、icon 等各式元素。WeUI 基础样式 库下载地址:<br>
 <a href="https://github.com/Tencent/weui-wxss" target="_blank" rel="noopener">github-小程序WeUI样式库</a><br>
 开发者可以将样式库下载并使 用微信 web 开发者工具打开 dist 目录(请注意，是 dist 目录，不是整个项目)，导 入 dist 目录后，可以预览样式库<br>
-<img src="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/z4iw2i.png" alt="z4iw2i"><br>
+<img src="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/z4iw2i.png" alt="z4iw2i"><br>
 可以在样式库里选择自己所需要的样式，然后直接将需要的样式的wxml复制黏贴至自己的项目中，然后将 WeUI 中 style 文件拷贝至自己的项目目录中.<br>
-<img src="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/KfAjHn.png" alt="KfAjHn"><br>
+<img src="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/KfAjHn.png" alt="KfAjHn"><br>
 将 style 文件夹拷贝至自己开发的项目后，还需要在 app.wxss 文件中使用 @import 导入 weui 的样式，如图 3–20 所示。到这里，就可以正常使用 WeUI 库中 微信的官方样式了。</p>
 <h1>bindchange事件</h1>
 <p>bindchange 事件与 bindtap 事件不同，它主要是当输入框中的内容发生改变时，<br>
@@ -477,7 +477,7 @@ wxml 文件代码:</p>
 <p>还涉及到了一个微信位置API接口的调用，主要是获取用户所在位置：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">wx</span><span class="hljs-selector-class">.chooseLocation</span>(&#123;<br>      <span class="hljs-attribute">type</span>: <span class="hljs-string">"gcj02"</span>,<br>      success: (res) =&gt; &#123;<br>        console.<span class="hljs-built_in">log</span>(<span class="hljs-string">'地址'</span>,res)<br>        this.<span class="hljs-built_in">setData</span>(&#123;<br>          choosen:res,<br>          address: res.address+res.name,<br>        &#125;)<br>      &#125;,<br>    &#125;)<br></code></pre></td></tr></table></figure>
 <p>最终实现效果：<br>
-<img src="http://jonyblog.oss-cn-beijing.aliyuncs.com/blog/Y6bmxF.png" alt="Y6bmxF"></p>
+<img src="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/Y6bmxF.png" alt="Y6bmxF"></p>
 
       
     </div>
@@ -652,7 +652,7 @@ wxml 文件代码:</p>
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -663,7 +663,7 @@ wxml 文件代码:</p>
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -674,7 +674,7 @@ wxml 文件代码:</p>
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -805,7 +805,7 @@ wxml 文件代码:</p>
 </div>
 <div class="copyright">
   <div class="powered-by"></div>
-  <span class="post-count">✍️ 收录16.6k个字</span>
+  <span class="post-count">✍️ 收录18.2k个字</span>
 </div>
 <!-- 在网页底部添加网站运行时间 -->
 
