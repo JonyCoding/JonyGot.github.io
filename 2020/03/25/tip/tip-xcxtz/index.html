@@ -88,15 +88,15 @@
 
 
 
-<meta name="description" content="微信如何跳转第三方小程序 首先设置app.json 这个一定不要忘了，当时我设置就是忘了这个，浪费了很多时间。 123&quot;navigateToMiniProgramAppIdList&quot;: [    &quot;wx32540bd863b27570&quot;], 在js界面设置跳转函数 1234567891011wx.navigateToMiniProgram(&amp;#123;  appId: &#39;wx32540bd863b">
+<meta name="description" content="微信如何跳转第三方小程序 首先设置app.json 这个一定不要忘了，当时我设置就是忘了这个，浪费了很多时间。 123&quot;navigateToMiniProgramAppIdList&quot;: [    &quot;wx32540bd863b27570&quot;],">
 <meta property="og:type" content="article">
 <meta property="og:title" content="tip-微信跳转第三方小程序">
 <meta property="og:url" content="http://yoursite.com/2020/03/25/tip/tip-xcxtz/index.html">
 <meta property="og:site_name" content="Jony&#39;s blog">
-<meta property="og:description" content="微信如何跳转第三方小程序 首先设置app.json 这个一定不要忘了，当时我设置就是忘了这个，浪费了很多时间。 123&quot;navigateToMiniProgramAppIdList&quot;: [    &quot;wx32540bd863b27570&quot;], 在js界面设置跳转函数 1234567891011wx.navigateToMiniProgram(&amp;#123;  appId: &#39;wx32540bd863b">
+<meta property="og:description" content="微信如何跳转第三方小程序 首先设置app.json 这个一定不要忘了，当时我设置就是忘了这个，浪费了很多时间。 123&quot;navigateToMiniProgramAppIdList&quot;: [    &quot;wx32540bd863b27570&quot;],">
 <meta property="og:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/EcVWHC.png">
 <meta property="article:published_time" content="2020-03-25T15:02:34.000Z">
-<meta property="article:modified_time" content="2020-03-26T16:06:32.972Z">
+<meta property="article:modified_time" content="2020-03-27T04:11:45.985Z">
 <meta property="article:author" content="Jony">
 <meta property="article:tag" content="小程序开发">
 <meta property="article:tag" content="避坑指南">
@@ -459,6 +459,7 @@
 <h2 id="首先设置app-json">首先设置app.json</h2>
 <p>这个一定不要忘了，当时我设置就是忘了这个，浪费了很多时间。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-string">"navigateToMiniProgramAppIdList"</span>: [<br>    <span class="hljs-string">"wx32540bd863b27570"</span><br>],<br></code></pre></td></tr></table></figure>
+<a id="more"></a>
 <h2 id="在js界面设置跳转函数">在js界面设置跳转函数</h2>
 <figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs 1c">wx.navigateToMiniProgram(&#123;<br>  appId: 'wx<span class="hljs-number">3254</span>0bd863b<span class="hljs-number">2757</span>0',<span class="hljs-comment">//这个是跳转拼多多的</span><br>  path: that.data.mobilUrl,<br>  success(res) &#123;<br>    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">"我已经到达PDD了"</span>)<br>  &#125;,<br>  fail(err) &#123;<br>    <span class="hljs-comment">// 打开失败	</span><br>    console.<span class="hljs-built_in">log</span>(err)<br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
 <p>很早以前小程序跳转需要绑定公众号才可以，很麻烦，但是2018年微信发出一个公告，可以不用绑定了，确实方便了很多。<br>
@@ -637,7 +638,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -648,7 +649,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -659,7 +660,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -790,7 +791,7 @@
 </div>
 <div class="copyright">
   <div class="powered-by"></div>
-  <span class="post-count">✍️ 收录18.2k个字</span>
+  <span class="post-count">✍️ 收录27.5k个字</span>
 </div>
 <!-- 在网页底部添加网站运行时间 -->
 

@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="学习笔记,小程序开发," />
+  <meta name="keywords" content="小程序开发,学习笔记," />
 
 
 
@@ -98,10 +98,10 @@
 <meta property="og:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/kpFd4f.png">
 <meta property="og:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/MUcsiq.png">
 <meta property="article:published_time" content="2020-01-22T15:34:26.000Z">
-<meta property="article:modified_time" content="2020-03-26T14:49:02.283Z">
+<meta property="article:modified_time" content="2020-03-27T04:12:36.986Z">
 <meta property="article:author" content="Jony">
-<meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="小程序开发">
+<meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/urFvwF.png">
 
@@ -460,8 +460,9 @@
         <h1>授权页面</h1>
 <h2 id="小程序登录">小程序登录</h2>
 <p>小程序可以通过微信官方提供的登录能力方便地获取微信提供的用户身份标<br>
-识，快速建立小程序内的用户体系。如图所示，小程序通过wx.login()获取code， 然后通过*wx.request()*发送 code 至开发者服务器，开发者服务器将登录凭证 <strong>appid、 appsecret</strong>与<strong>code</strong>用于校验微信接口，微信接口服务向开发者服务器返回用户唯一 标识 <strong>OpenID</strong>和会话密钥session—key。开发者服务器实现自定义登录状态与 openid 与 session_key关联，并向小程序返回自定义状态。小程序将自定义登录状态 存入 storage，并用于后续 wx.request 发起业务请求。<br>
-<img src="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/urFvwF.png" alt="urFvwF"><br>
+识，快速建立小程序内的用户体系。如图所示，小程序通过wx.login()获取code， 然后通过*wx.request()*发送 code 至开发者服务器，开发者服务器将登录凭证 <strong>appid、 appsecret</strong>与<strong>code</strong>用于校验微信接口，微信接口服务向开发者服务器返回用户唯一 标识 <strong>OpenID</strong>和会话密钥session—key。开发者服务器实现自定义登录状态与 openid 与 session_key关联，并向小程序返回自定义状态。小程序将自定义登录状态 存入 storage，并用于后续 wx.request 发起业务请求。</p>
+<a id="more"></a>
+<p><img src="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/urFvwF.png" alt="urFvwF"><br>
 对于某个微信小程序，每个用户访问该小程序都有产生一个唯一的 openid，这 个 openid 为用户访问该小程序的标识符，即每个用户的 openid 都是不一样的。因 此，可以把 **openid **作为用户唯一标识符(类似身份证号)，并存于数据库中用以后续操作。</p>
 <h2 id="wx-login">wx.login()</h2>
 <p>调用wx.login()接口获取登录凭证(code),通过凭证进而换取用户登录态信息,其中wx.login( )接口</p>
@@ -603,9 +604,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"><i class="fa fa-tag"></i> 学习笔记</a>
-          
             <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/" rel="tag"><i class="fa fa-tag"></i> 小程序开发</a>
+          
+            <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"><i class="fa fa-tag"></i> 学习笔记</a>
           
         </div>
       
@@ -754,7 +755,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -765,7 +766,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -776,7 +777,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -907,7 +908,7 @@
 </div>
 <div class="copyright">
   <div class="powered-by"></div>
-  <span class="post-count">✍️ 收录18.2k个字</span>
+  <span class="post-count">✍️ 收录27.5k个字</span>
 </div>
 <!-- 在网页底部添加网站运行时间 -->
 

@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="javaScript技巧,学习笔记," />
+  <meta name="keywords" content="学习笔记,javaScript技巧," />
 
 
 
@@ -96,10 +96,10 @@
 <meta property="og:description" content="p5.js入坑指南 p5.js 是一个JavaScript的函数库，它在制作之初就和Processing有同样的目标。就是让艺术家，设计师，教育工作者和编程初学者能够很容易，很轻松地学习和使用程序设计。 我们都有很多的想法和创意，透过编程来表达自己的创意和艺术构想，是一个全新的方式，也是一个很好的方式。设计师做设计，最初是使用的纸和笔。到后来可以使用电脑软件来辅助设计，例如大家熟悉的Ps，Ai,m">
 <meta property="og:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/8WSJva.png">
 <meta property="article:published_time" content="2019-02-24T01:02:13.000Z">
-<meta property="article:modified_time" content="2020-03-26T14:48:10.941Z">
+<meta property="article:modified_time" content="2020-03-27T04:09:44.771Z">
 <meta property="article:author" content="Jony">
-<meta property="article:tag" content="javaScript技巧">
 <meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="javaScript技巧">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/8WSJva.png">
 
@@ -458,6 +458,7 @@
         <h1>p5.js入坑指南</h1>
 <p>p5.js 是一个JavaScript的函数库，它在制作之初就和Processing有同样的目标。就是让艺术家，设计师，教育工作者和编程初学者能够很容易，很轻松地学习和使用程序设计。<br>
 我们都有很多的想法和创意，透过编程来表达自己的创意和艺术构想，是一个全新的方式，也是一个很好的方式。设计师做设计，最初是使用的纸和笔。到后来可以使用电脑软件来辅助设计，例如大家熟悉的Ps，Ai,maya,3Dmax等等。但是当今这个时代的设计师需要学习编程，因为这样就可以不受设计软件的影响和限制，进行更加自由的创作，让自己的想象力和创意尽情的挥洒出来！当你自己能够制作出用来创作的工具时，那么唯一限制你的就是你的想象力了。</p>
+<a id="more"></a>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> colors=[&#123;<span class="hljs-string">"r"</span>:<span class="hljs-number">255</span>,<span class="hljs-string">"g"</span>:<span class="hljs-number">193</span>,<span class="hljs-string">"b"</span>:<span class="hljs-number">37</span>&#125;,<br>		            &#123;<span class="hljs-string">"r"</span>:<span class="hljs-number">177</span>,<span class="hljs-string">"g"</span>:<span class="hljs-number">193</span>,<span class="hljs-string">"b"</span>:<span class="hljs-number">37</span>&#125;,<br>		            &#123;<span class="hljs-string">"r"</span>:<span class="hljs-number">155</span>,<span class="hljs-string">"g"</span>:<span class="hljs-number">153</span>,<span class="hljs-string">"b"</span>:<span class="hljs-number">30</span>&#125;,<br>		            &#123;<span class="hljs-string">"r"</span>:<span class="hljs-number">125</span>,<span class="hljs-string">"g"</span>:<span class="hljs-number">133</span>,<span class="hljs-string">"b"</span>:<span class="hljs-number">25</span>&#125;,<br>		            &#123;<span class="hljs-string">"r"</span>:<span class="hljs-number">145</span>,<span class="hljs-string">"g"</span>:<span class="hljs-number">143</span>,<span class="hljs-string">"b"</span>:<span class="hljs-number">10</span>&#125;];<br>		<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bubble</span>(<span class="hljs-params">x,y,r,speedX,speedY,red,green,blue</span>)</span>&#123;<br>			<span class="hljs-keyword">this</span>.x=x;<br>			<span class="hljs-keyword">this</span>.y=y;<br>			<span class="hljs-keyword">this</span>.r=r;<br>			<span class="hljs-keyword">this</span>.speedX=speedX;<br>			<span class="hljs-keyword">this</span>.speedY=speedY;<br>			<span class="hljs-keyword">this</span>.red=red;<br>			<span class="hljs-keyword">this</span>.green=green;<br>			<span class="hljs-keyword">this</span>.blue=blue;<br>			<span class="hljs-keyword">this</span>.overflow=<span class="hljs-number">0</span>;<br>			<span class="hljs-keyword">this</span>.display=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<br>				noStroke();<span class="hljs-comment">//无边框</span><br>				fill(<span class="hljs-keyword">this</span>.red,<span class="hljs-keyword">this</span>.green,<span class="hljs-keyword">this</span>.blue,<span class="hljs-number">160</span>);<br>				ellipse(<span class="hljs-keyword">this</span>.x,<span class="hljs-keyword">this</span>.y,<span class="hljs-keyword">this</span>.r+<span class="hljs-keyword">this</span>.overflow,<span class="hljs-keyword">this</span>.r+<span class="hljs-keyword">this</span>.overflow);<br>			&#125;<br>			<span class="hljs-keyword">this</span>.move=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<br>				<span class="hljs-keyword">this</span>.x+=<span class="hljs-keyword">this</span>.speedX;<br>				<span class="hljs-keyword">if</span>(<span class="hljs-keyword">this</span>.x&lt;<span class="hljs-number">0</span>||<span class="hljs-keyword">this</span>.x&gt;windowWidth)&#123;<br>					<span class="hljs-keyword">this</span>.speedX=-<span class="hljs-keyword">this</span>.speedX;<br>				&#125;<br>				<span class="hljs-keyword">this</span>.y+=<span class="hljs-keyword">this</span>.speedY;<br>				<span class="hljs-keyword">if</span>(<span class="hljs-keyword">this</span>.y&lt;<span class="hljs-number">0</span>||<span class="hljs-keyword">this</span>.y&gt;windowHeight)&#123;<br>					<span class="hljs-keyword">this</span>.speedY=-<span class="hljs-keyword">this</span>.speedY;<br>				&#125;<br>				<span class="hljs-keyword">if</span>(<span class="hljs-built_in">Math</span>.abs(mouseX-<span class="hljs-keyword">this</span>.x)&lt;=<span class="hljs-number">20</span>&amp;&amp;<span class="hljs-built_in">Math</span>.abs(mouseY-<span class="hljs-keyword">this</span>.y)&lt;=<span class="hljs-number">20</span>)&#123;<br>					<span class="hljs-keyword">this</span>.overflow=<span class="hljs-keyword">this</span>.r*<span class="hljs-number">4</span>;<br>					<span class="hljs-keyword">this</span>.x=mouseX+random(<span class="hljs-number">-20</span>,<span class="hljs-number">20</span>);<br>					<span class="hljs-keyword">this</span>.y=mouseY+random(<span class="hljs-number">-20</span>,<span class="hljs-number">20</span>);<br>				&#125;<br>				<span class="hljs-keyword">else</span>&#123;<br>					<span class="hljs-keyword">this</span>.overflow=<span class="hljs-number">0</span>;<br>				&#125;<br>			&#125;<br>		&#125;<br>		<span class="hljs-keyword">var</span> bubbles=[];<br>		<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setup</span>(<span class="hljs-params"></span>)</span>&#123;<br>			createCanvas(windowWidth,windowHeight)<br>			background(<span class="hljs-number">255</span>);<br>			frameRate(<span class="hljs-number">50</span>);<span class="hljs-comment">//每秒重绘的帧数,即速度</span><br>			<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">500</span>;i++) &#123;<br>				<span class="hljs-keyword">var</span> randomX=random(<span class="hljs-number">0</span>,windowWidth);<br>				<span class="hljs-keyword">var</span> randomY=random(<span class="hljs-number">0</span>,windowHeight);<br>				<span class="hljs-keyword">var</span> randomR=random(<span class="hljs-number">0</span>,<span class="hljs-number">20</span>);<span class="hljs-comment">//da xia</span><br>				<span class="hljs-keyword">var</span> randomSpeedX=random(<span class="hljs-number">-2</span>,<span class="hljs-number">2</span>);<span class="hljs-comment">//方向</span><br>				<span class="hljs-keyword">var</span> randomSpeedY=random(<span class="hljs-number">-2</span>,<span class="hljs-number">2</span>);<br>				<span class="hljs-keyword">var</span> r=colors[i%<span class="hljs-number">5</span>].r;<br>				<span class="hljs-keyword">var</span> g=colors[i%<span class="hljs-number">5</span>].g;<br>				<span class="hljs-keyword">var</span> b=colors[i%<span class="hljs-number">5</span>].b;<br>				bubbles[i]=<span class="hljs-keyword">new</span> bubble(randomX,randomY,randomR,randomSpeedX,randomSpeedY,r,g,b)<br>				bubbles[i].display(); <br>			&#125;<br>		&#125;<br>		<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">draw</span>(<span class="hljs-params"></span>)</span>&#123;<br>			background(<span class="hljs-number">255</span>);<br>			<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">500</span>;i++)&#123;<br>				bubbles[i].move();<br>				bubbles[i].display();<br>			&#125;<br>		&#125;<br></code></pre></td></tr></table></figure>
 <h2 id="上面代码实现效果展示">上面代码实现效果展示</h2>
 <p><img src="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/8WSJva.png" alt="8WSJva"></p>
@@ -484,9 +485,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javaScript%E6%8A%80%E5%B7%A7/" rel="tag"><i class="fa fa-tag"></i> javaScript技巧</a>
-          
             <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"><i class="fa fa-tag"></i> 学习笔记</a>
+          
+            <a href="/tags/javaScript%E6%8A%80%E5%B7%A7/" rel="tag"><i class="fa fa-tag"></i> javaScript技巧</a>
           
         </div>
       
@@ -499,8 +500,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/24/js/js-lunbo/" rel="next" title="javaScript">
-                <i class="fa fa-chevron-left"></i> javaScript
+              <a href="/2019/02/24/js/js-biaodan/" rel="next" title="javaScrip表单校验如何实现">
+                <i class="fa fa-chevron-left"></i> javaScrip表单校验如何实现
               </a>
             
           </div>
@@ -509,8 +510,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/02/24/js/js-huoqu/" rel="prev" title="javaScript-获取点击数据">
-                javaScript-获取点击数据 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/24/js/js-lunbo/" rel="prev" title="javaScript">
+                javaScript <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -635,7 +636,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -646,7 +647,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -657,7 +658,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -788,7 +789,7 @@
 </div>
 <div class="copyright">
   <div class="powered-by"></div>
-  <span class="post-count">✍️ 收录18.2k个字</span>
+  <span class="post-count">✍️ 收录27.5k个字</span>
 </div>
 <!-- 在网页底部添加网站运行时间 -->
 

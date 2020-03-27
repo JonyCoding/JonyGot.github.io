@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="学习笔记,小程序开发,小程序路由," />
+  <meta name="keywords" content="小程序开发,学习笔记,小程序路由," />
 
 
 
@@ -95,10 +95,10 @@
 <meta property="og:site_name" content="Jony&#39;s blog">
 <meta property="og:description" content="知识点整理 bindtap事件绑定 事件是视图层到逻辑层的通讯方式。事件可以将用户的行为反馈到逻辑层进行 处理。事件可以绑定在组件上，当达到触发事件，就会执行逻辑层中对应的事件处 理函数。代码示例如下。 123&lt;!--index.wxml--&gt;&lt;view class&#x3D;&quot;begininfo&quot;&gt;&lt;button bindtap&#x3D;&#39;beginAnswer&#39;&gt; 开始测试">
 <meta property="article:published_time" content="2020-01-06T07:34:13.000Z">
-<meta property="article:modified_time" content="2020-03-26T00:17:06.430Z">
+<meta property="article:modified_time" content="2020-03-27T04:12:07.688Z">
 <meta property="article:author" content="Jony">
-<meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="小程序开发">
+<meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="小程序路由">
 <meta name="twitter:card" content="summary">
 
@@ -458,6 +458,7 @@
 <h2 id="bindtap事件绑定">bindtap事件绑定</h2>
 <p>事件是视图层到逻辑层的通讯方式。事件可以将用户的行为反馈到逻辑层进行 处理。事件可以绑定在组件上，当达到触发事件，就会执行逻辑层中对应的事件处 理函数。代码示例如下。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!--index.wxml--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"begininfo"</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">bindtap</span>=<span class="hljs-string">'beginAnswer'</span>&gt;</span> 开始测试 <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<a id="more"></a>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//index.js</span><br>beginAnswer: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123; wx.navigateTo(&#123;<br>url: <span class="hljs-string">'../test/test'</span> &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>在 index.wxml 文件中，将 bindtap 事件绑定在 button 组件上，其中 bindtap=’beginAnswer’。当测试者单击“开始测试”按钮时，会触发事件，就会执行 index.js 中对应的事件处理函数 beginAnswer，该事件处理函数在触发后，执行页面 跳转，跳转至 test 页面。</p>
 <table>
@@ -571,9 +572,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"><i class="fa fa-tag"></i> 学习笔记</a>
-          
             <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/" rel="tag"><i class="fa fa-tag"></i> 小程序开发</a>
+          
+            <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"><i class="fa fa-tag"></i> 学习笔记</a>
           
             <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%B7%AF%E7%94%B1/" rel="tag"><i class="fa fa-tag"></i> 小程序路由</a>
           
@@ -588,8 +589,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/01/06/wx/wx-unix/" rel="next" title="小程序开发-unix时间戳转换">
-                <i class="fa fa-chevron-left"></i> 小程序开发-unix时间戳转换
+              <a href="/2020/01/06/wx/wx-chuanzhi/" rel="next" title="小程序开发-传值">
+                <i class="fa fa-chevron-left"></i> 小程序开发-传值
               </a>
             
           </div>
@@ -598,8 +599,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/01/06/wx/wx-chuanzhi/" rel="prev" title="小程序开发-传值">
-                小程序开发-传值 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/01/16/wx/wx-tiaozhuan/" rel="prev" title="小程序开发-页面跳转">
+                小程序开发-页面跳转 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -724,7 +725,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -735,7 +736,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -746,7 +747,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -877,7 +878,7 @@
 </div>
 <div class="copyright">
   <div class="powered-by"></div>
-  <span class="post-count">✍️ 收录18.2k个字</span>
+  <span class="post-count">✍️ 收录27.5k个字</span>
 </div>
 <!-- 在网页底部添加网站运行时间 -->
 

@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="javaScript技巧,学习笔记," />
+  <meta name="keywords" content="学习笔记,javaScript技巧," />
 
 
 
@@ -95,10 +95,10 @@
 <meta property="og:site_name" content="Jony&#39;s blog">
 <meta property="og:description" content="如何用js实现图片轮播图片切换 实现轮播的方式用到了几个js的原生函数和数组 setInterval() 该方法可按照指定的 周期（以毫秒计) 来调用函数或计算表达式。 setInterval() 方法会不停地调用函数，直到 clearInterval() 被调用 或 窗口被关闭。由 setInterval() 返回的 ID 值可用作 clearInterval() 方法的参数。 tip:1000">
 <meta property="article:published_time" content="2019-02-24T01:02:13.000Z">
-<meta property="article:modified_time" content="2020-03-26T05:15:35.007Z">
+<meta property="article:modified_time" content="2020-03-27T04:09:21.497Z">
 <meta property="article:author" content="Jony">
-<meta property="article:tag" content="javaScript技巧">
 <meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="javaScript技巧">
 <meta name="twitter:card" content="summary">
 
 
@@ -484,6 +484,7 @@ tip:如果你只想执行一次可以使用 setTimeout() 方法。</p>
 </table>
 <h2 id="和setTimeout-对比主要区别是循环与不循环">和setTimeout()对比主要区别是循环与不循环</h2>
 <p>tip: 一定不要忘了用clearTimeout()阻止函数执行</p>
+<a id="more"></a>
 <p>实现代码</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> myimg=<span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(<span class="hljs-string">"1.png"</span>,<span class="hljs-string">"2.png"</span>,<span class="hljs-string">"3.png"</span>,<span class="hljs-string">"4.png"</span>);<br>	<span class="hljs-keyword">var</span> urls=<span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(<span class="hljs-string">"https://URL地址1"</span>,<br>                        <span class="hljs-string">"https://URL地址2"</span>,<br>                        <span class="hljs-string">"https://URL地址3"</span>,<br>                        <span class="hljs-string">"http://URL地址4"</span>);<br>    <span class="hljs-keyword">var</span> r=<span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(<span class="hljs-string">"图1"</span>,<span class="hljs-string">"图2"</span>,<span class="hljs-string">"图3"</span>,<span class="hljs-string">"图4"</span>);<br>	<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">var</span> tupian=<span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">"img"</span>)[<span class="hljs-number">0</span>];<span class="hljs-comment">/*[0]是指html中第一个img，想要获取第二个img则用[1]。*/</span><br>	<span class="hljs-keyword">var</span> utip=<span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">"a"</span>)[<span class="hljs-number">0</span>];<br>	<span class="hljs-keyword">var</span> u=<span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">"p"</span>)[<span class="hljs-number">0</span>];<br>	setInterval(<span class="hljs-string">"changeimg()"</span>,<span class="hljs-number">2000</span>)<br>	<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">changeimg</span>(<span class="hljs-params"></span>)</span>&#123;<br>		<span class="hljs-comment">//tupian.setAttribute("src","img/"+myimg[i++]);</span><br>		rand=i++;<br>		<span class="hljs-keyword">if</span>(i==myimg.length)&#123;<br>			i=<span class="hljs-number">0</span>;<br>		&#125;<br>		utip.innerHTML=<span class="hljs-string">'&lt;a href="'</span>+urls[rand]+<span class="hljs-string">'"&gt;&lt;img src="img/'</span>+myimg[rand]+<span class="hljs-string">'" /&gt;&lt;/a&gt;'</span>;<br>		u.innerHTML=r[rand];<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>htm部分</p>
@@ -511,9 +512,9 @@ tip:如果你只想执行一次可以使用 setTimeout() 方法。</p>
       
         <div class="post-tags">
           
-            <a href="/tags/javaScript%E6%8A%80%E5%B7%A7/" rel="tag"><i class="fa fa-tag"></i> javaScript技巧</a>
-          
             <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"><i class="fa fa-tag"></i> 学习笔记</a>
+          
+            <a href="/tags/javaScript%E6%8A%80%E5%B7%A7/" rel="tag"><i class="fa fa-tag"></i> javaScript技巧</a>
           
         </div>
       
@@ -526,8 +527,8 @@ tip:如果你只想执行一次可以使用 setTimeout() 方法。</p>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/24/js/js-lunbotu/" rel="next" title="javaScript-轮播图">
-                <i class="fa fa-chevron-left"></i> javaScript-轮播图
+              <a href="/2019/02/24/js/js-P5BG/" rel="next" title="javaScript-P5实现canver动画">
+                <i class="fa fa-chevron-left"></i> javaScript-P5实现canver动画
               </a>
             
           </div>
@@ -536,8 +537,8 @@ tip:如果你只想执行一次可以使用 setTimeout() 方法。</p>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/02/24/js/js-P5BG/" rel="prev" title="javaScript-P5实现canver动画">
-                javaScript-P5实现canver动画 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/24/HC/url/" rel="prev" title="URL深度理解">
+                URL深度理解 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -662,7 +663,7 @@ tip:如果你只想执行一次可以使用 setTimeout() 方法。</p>
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -673,7 +674,7 @@ tip:如果你只想执行一次可以使用 setTimeout() 方法。</p>
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -684,7 +685,7 @@ tip:如果你只想执行一次可以使用 setTimeout() 方法。</p>
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -815,7 +816,7 @@ tip:如果你只想执行一次可以使用 setTimeout() 方法。</p>
 </div>
 <div class="copyright">
   <div class="powered-by"></div>
-  <span class="post-count">✍️ 收录18.2k个字</span>
+  <span class="post-count">✍️ 收录27.5k个字</span>
 </div>
 <!-- 在网页底部添加网站运行时间 -->
 

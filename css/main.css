@@ -754,7 +754,7 @@ pre .javascript .function {
 .post-body .note h4,
 .post-body .note h5,
 .post-body .note h6 {
-  margin-top: 0;
+  margin-top: 3px;
   margin-bottom: 0;
   border-bottom: initial;
   padding-top: 0 !important;
@@ -775,6 +775,16 @@ pre .javascript .function {
 .post-body .note blockquote:last-child {
   margin-bottom: 0;
 }
+.post-body .note:not(.no-icon) {
+  padding-left: 45px;
+}
+.post-body .note:not(.no-icon):before {
+  position: absolute;
+  font-family: 'FontAwesome';
+  font-size: larger;
+  top: 13px;
+  left: 15px;
+}
 .post-body .note.default {
   border-left-color: #777;
 }
@@ -783,6 +793,10 @@ pre .javascript .function {
 .post-body .note.default h4,
 .post-body .note.default h5,
 .post-body .note.default h6 {
+  color: #777;
+}
+.post-body .note.default:not(.no-icon):before {
+  content: "\f0a9";
   color: #777;
 }
 .post-body .note.primary {
@@ -795,6 +809,10 @@ pre .javascript .function {
 .post-body .note.primary h6 {
   color: #6f42c1;
 }
+.post-body .note.primary:not(.no-icon):before {
+  content: "\f055";
+  color: #6f42c1;
+}
 .post-body .note.info {
   border-left-color: #428bca;
 }
@@ -803,6 +821,10 @@ pre .javascript .function {
 .post-body .note.info h4,
 .post-body .note.info h5,
 .post-body .note.info h6 {
+  color: #428bca;
+}
+.post-body .note.info:not(.no-icon):before {
+  content: "\f05a";
   color: #428bca;
 }
 .post-body .note.success {
@@ -815,6 +837,10 @@ pre .javascript .function {
 .post-body .note.success h6 {
   color: #5cb85c;
 }
+.post-body .note.success:not(.no-icon):before {
+  content: "\f058";
+  color: #5cb85c;
+}
 .post-body .note.warning {
   border-left-color: #f0ad4e;
 }
@@ -825,6 +851,10 @@ pre .javascript .function {
 .post-body .note.warning h6 {
   color: #f0ad4e;
 }
+.post-body .note.warning:not(.no-icon):before {
+  content: "\f06a";
+  color: #f0ad4e;
+}
 .post-body .note.danger {
   border-left-color: #d9534f;
 }
@@ -833,6 +863,10 @@ pre .javascript .function {
 .post-body .note.danger h4,
 .post-body .note.danger h5,
 .post-body .note.danger h6 {
+  color: #d9534f;
+}
+.post-body .note.danger:not(.no-icon):before {
+  content: "\f056";
   color: #d9534f;
 }
 .post-body .label {
@@ -1928,7 +1962,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #26b3a4;
+  background: #ffa;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3279,6 +3313,73 @@ a {
   margin-left: 15px;
   color: #f2f2f2;
 }
+.my-post {
+  padding: 8px 10px;
+  border-radius: 15px;
+  position: relative;
+  margin-bottom: 1rem;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.my-post span {
+  color: #000;
+  margin-left: 35px;
+  font-size: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.my-post-time {
+  color: #fff;
+  background: linear-gradient(to right, #314755, #26a0da);
+  border-radius: 5px;
+  padding: 5px;
+}
+.post-sticky-flag {
+  font-size: inherit;
+  float: left;
+  color: #000;
+  cursor: help;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
+}
+.post-sticky-flag:hover {
+  color: #07b39b;
+}
+.category-list {
+  display: inline;
+}
+.category-all-page a {
+  display: block;
+  color: #fff;
+  padding: 25px;
+  font-size: 30px;
+}
+.category-all-page .category-list-item {
+  width: 30%;
+  list-style: none;
+  transition: all 1s ease 0s;
+  margin: 25px 12px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 10px;
+  background: #52c65e;
+  list-style: none !important;
+  display: inline-block;
+}
+.category-list-item a:hover {
+  background: linear-gradient(-45deg, #004ff9, #fff94c);
+  border-radius: 10px;
+  transition: all 1s ease 0s;
+  background: #2c84d5;
+}
+.category-all-page .category-list-count {
+  display: none;
+}
 @media (min-width: 1600px) {
   .container .main-inner {
     width: 1100px;
@@ -3294,6 +3395,18 @@ a {
   .back-to-top.back-to-top-on {
     bottom: unset;
     top: calc(100vh - 1200px - 200px);
+  }
+  .category-all-page .category-list-item {
+    width: 96%;
+    list-style: none;
+    transition: all 0.8s ease 0s;
+    margin: 25px 10px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 10px;
+    background: #52c65e;
+    list-style: none !important;
+    display: inline-block;
   }
 }
 @media (max-width: 1000px) {

@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="javaScript技巧,小程序开发,避坑指南," />
+  <meta name="keywords" content="小程序开发,javaScript技巧,避坑指南," />
 
 
 
@@ -88,17 +88,17 @@
 
 
 
-<meta name="description" content="js如何将unix时间戳转换为正常时间 通常我们在PHP或者数据库中获取的时间都位unix时间戳，需要格式转换才能正常显示。 在项目中定义一个js文件，将时间戳转换代码封装起来 12345678910111213141516171819202122&#x2F;&#x2F; 接口暴露module.exports &#x3D; &amp;#123;  formatTime: formatTime,  js_date_time: js_da">
+<meta name="description" content="js如何将unix时间戳转换为正常时间 通常我们在PHP或者数据库中获取的时间都位unix时间戳，需要格式转换才能正常显示。 在项目中定义一个js文件，将时间戳转换代码封装起来">
 <meta property="og:type" content="article">
 <meta property="og:title" content="小程序开发-unix时间戳转换">
 <meta property="og:url" content="http://yoursite.com/2020/01/06/wx/wx-unix/index.html">
 <meta property="og:site_name" content="Jony&#39;s blog">
-<meta property="og:description" content="js如何将unix时间戳转换为正常时间 通常我们在PHP或者数据库中获取的时间都位unix时间戳，需要格式转换才能正常显示。 在项目中定义一个js文件，将时间戳转换代码封装起来 12345678910111213141516171819202122&#x2F;&#x2F; 接口暴露module.exports &#x3D; &amp;#123;  formatTime: formatTime,  js_date_time: js_da">
+<meta property="og:description" content="js如何将unix时间戳转换为正常时间 通常我们在PHP或者数据库中获取的时间都位unix时间戳，需要格式转换才能正常显示。 在项目中定义一个js文件，将时间戳转换代码封装起来">
 <meta property="article:published_time" content="2020-01-06T07:34:13.000Z">
-<meta property="article:modified_time" content="2020-03-26T15:59:41.865Z">
+<meta property="article:modified_time" content="2020-03-27T04:15:36.901Z">
 <meta property="article:author" content="Jony">
-<meta property="article:tag" content="javaScript技巧">
 <meta property="article:tag" content="小程序开发">
+<meta property="article:tag" content="javaScript技巧">
 <meta property="article:tag" content="避坑指南">
 <meta name="twitter:card" content="summary">
 
@@ -457,6 +457,7 @@
         <h1>js如何将unix时间戳转换为正常时间</h1>
 <p>通常我们在PHP或者数据库中获取的时间都位unix时间戳，需要格式转换才能正常显示。<br>
 在项目中定义一个js文件，将时间戳转换代码封装起来</p>
+<a id="more"></a>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 接口暴露</span><br><span class="hljs-built_in">module</span>.exports = &#123;<br>  formatTime: formatTime,<br>  js_date_time: js_date_time<br>&#125;<br><br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">js_date_time</span>(<span class="hljs-params">unixtime</span>) </span>&#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"111111111111111"</span>, unixtime);<br>  <span class="hljs-keyword">var</span> dateTime = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-built_in">parseInt</span>(unixtime) * <span class="hljs-number">1000</span>)<br>  <span class="hljs-keyword">var</span> year = dateTime.getFullYear();<br>  <span class="hljs-keyword">var</span> month = dateTime.getMonth() + <span class="hljs-number">1</span>;<br>  <span class="hljs-keyword">var</span> day = dateTime.getDate();<br>  <span class="hljs-keyword">var</span> hour = dateTime.getHours();<br>  <span class="hljs-keyword">var</span> minute = dateTime.getMinutes();<br>  <span class="hljs-keyword">var</span> second = dateTime.getSeconds();<br>  <span class="hljs-keyword">var</span> now = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();<br>  <span class="hljs-keyword">var</span> now_new = <span class="hljs-built_in">Date</span>.parse(now.toDateString()); <span class="hljs-comment">//typescript转换写法</span><br>  <span class="hljs-keyword">var</span> milliseconds = now_new - dateTime;<br>  <span class="hljs-keyword">var</span> timeSpanStr = year + <span class="hljs-string">'-'</span> + month + <span class="hljs-string">'-'</span> + day + <span class="hljs-string">' '</span> + hour + <span class="hljs-string">':'</span> + minute;<br>  <span class="hljs-keyword">return</span> timeSpanStr;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>在需要时间戳转换的页面引用</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> utils = <span class="hljs-built_in">require</span>(<span class="hljs-string">"../../utils/util.js"</span>)<br></code></pre></td></tr></table></figure>
@@ -487,9 +488,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javaScript%E6%8A%80%E5%B7%A7/" rel="tag"><i class="fa fa-tag"></i> javaScript技巧</a>
-          
             <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/" rel="tag"><i class="fa fa-tag"></i> 小程序开发</a>
+          
+            <a href="/tags/javaScript%E6%8A%80%E5%B7%A7/" rel="tag"><i class="fa fa-tag"></i> javaScript技巧</a>
           
             <a href="/tags/%E9%81%BF%E5%9D%91%E6%8C%87%E5%8D%97/" rel="tag"><i class="fa fa-tag"></i> 避坑指南</a>
           
@@ -514,8 +515,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/01/06/wx/wx-bushu%206/" rel="prev" title="心理测试小程序学习笔记">
-                心理测试小程序学习笔记 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/01/06/wx/wx-chuanzhi/" rel="prev" title="小程序开发-传值">
+                小程序开发-传值 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -640,7 +641,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -651,7 +652,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -662,7 +663,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -793,7 +794,7 @@
 </div>
 <div class="copyright">
   <div class="powered-by"></div>
-  <span class="post-count">✍️ 收录18.2k个字</span>
+  <span class="post-count">✍️ 收录27.5k个字</span>
 </div>
 <!-- 在网页底部添加网站运行时间 -->
 

@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="javaScript技巧,学习笔记," />
+  <meta name="keywords" content="学习笔记,javaScript技巧," />
 
 
 
@@ -96,10 +96,10 @@
 <meta property="og:description" content="javascript如何实现tab选项卡 借助JQuery 123456$(document).ready(function()&amp;#123;	$(&quot;#right li&quot;).mouseover(function()&amp;#123;		var i&#x3D;$(&quot;#right li&quot;).index(this);		$(&quot;#left img&quot;).attr(&quot;src&quot;,&quot;img&#x2F;1.&quot;+(i+1)+&quot;.jpg&quot;);&#x2F;*">
 <meta property="og:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/jKpi2y.png">
 <meta property="article:published_time" content="2019-02-24T01:02:13.000Z">
-<meta property="article:modified_time" content="2020-03-26T14:48:25.945Z">
+<meta property="article:modified_time" content="2020-03-27T04:10:23.130Z">
 <meta property="article:author" content="Jony">
-<meta property="article:tag" content="javaScript技巧">
 <meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="javaScript技巧">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/jKpi2y.png">
 
@@ -458,6 +458,7 @@
         <p>javascript如何实现tab选项卡<br>
 借助JQuery</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js">$(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<br>	$(<span class="hljs-string">"#right li"</span>).mouseover(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<br>		<span class="hljs-keyword">var</span> i=$(<span class="hljs-string">"#right li"</span>).index(<span class="hljs-keyword">this</span>);<br>		$(<span class="hljs-string">"#left img"</span>).attr(<span class="hljs-string">"src"</span>,<span class="hljs-string">"img/1."</span>+(i+<span class="hljs-number">1</span>)+<span class="hljs-string">".jpg"</span>);<span class="hljs-comment">/*attr（）改变选中元素的属性*/</span><br>	&#125;)<br>&#125;)<br></code></pre></td></tr></table></figure>
+<a id="more"></a>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><br><span class="css">			<span class="hljs-selector-id">#left</span>&#123;</span><br>				float: left;<br>				height: 155px;<br>				width: 215px;<br>				padding: 10px 5px 10px 5px;<br>			&#125;<br><span class="css">			<span class="hljs-selector-id">#cont</span> <span class="hljs-selector-id">#left</span> <span class="hljs-selector-tag">img</span>&#123;</span><br>				display: block;<br>				padding: 6px;<br><span class="css">				<span class="hljs-selector-tag">border</span>: 1<span class="hljs-selector-tag">px</span> <span class="hljs-selector-tag">solid</span> <span class="hljs-selector-id">#999</span>;</span><br>			&#125;<br><span class="css">			<span class="hljs-selector-id">#right</span>&#123;</span><br>				height: 160px;<br>				width: 75px;<br>				float: right;<br>				margin-top: 10px;<br>				margin-right: 5px;<br>			&#125;<br><span class="css">			<span class="hljs-selector-id">#cont</span> <span class="hljs-selector-id">#right</span> <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span> <span class="hljs-selector-tag">a</span>&#123;</span><br>				text-decoration: none;<br>				display: block;<br>				font-size: 14px;<br>				line-height: 180%;<br>				color: black;<br>				text-align: center;<br>				border-bottom-width: 1px;<br>				border-bottom-style: dashed;<br><span class="css">				<span class="hljs-selector-tag">border-bottom-color</span>: <span class="hljs-selector-id">#999</span>;</span><br>			&#125;<br><span class="css">			<span class="hljs-selector-id">#cont</span> <span class="hljs-selector-id">#right</span> <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span>&#123;</span><br><span class="css">				<span class="hljs-selector-tag">color</span>: <span class="hljs-selector-id">#f00</span>;</span><br><span class="css">				<span class="hljs-selector-tag">background-color</span>: <span class="hljs-selector-id">#9ff</span>;</span><br>				font-weight: bold;<br>			&#125;<br><span class="css">			<span class="hljs-selector-id">#cont</span>&#123;</span><br>				width: 320px;<br><span class="css">				<span class="hljs-selector-tag">border</span>: 1<span class="hljs-selector-tag">px</span> <span class="hljs-selector-tag">solid</span> <span class="hljs-selector-id">#999</span>;</span><br>				height: 180px;<br>			&#125;<br><span class="css">			<span class="hljs-selector-id">#cont</span> <span class="hljs-selector-id">#right</span> <span class="hljs-selector-tag">ul</span>&#123;</span><br>				margin: 0;<br>				list-style-type: none;<br>				padding: 0;<br>			&#125;<br><span class="css">			<span class="hljs-selector-id">#cont</span> <span class="hljs-selector-id">#right</span> <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span>&#123;</span><br>				display: inline;<br>			&#125;<br>		<span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"cont"</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"left"</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"img/1.1.jpg"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"212"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"152"</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br>			<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"right"</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>					<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>繁花似锦<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>					<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>锦绣山河<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>					<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>北国风光<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>					<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>原驰蜡象<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>					<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>橘子洲头<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>					<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>万山红遍<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>				<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br>			<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>		<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <p>实现效果<br>
 <img src="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/jKpi2y.png" alt="jKpi2y"></p>
@@ -484,9 +485,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javaScript%E6%8A%80%E5%B7%A7/" rel="tag"><i class="fa fa-tag"></i> javaScript技巧</a>
-          
             <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"><i class="fa fa-tag"></i> 学习笔记</a>
+          
+            <a href="/tags/javaScript%E6%8A%80%E5%B7%A7/" rel="tag"><i class="fa fa-tag"></i> javaScript技巧</a>
           
         </div>
       
@@ -499,8 +500,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/24/php/php-MVC/" rel="next" title="PHP-MVC开发">
-                <i class="fa fa-chevron-left"></i> PHP-MVC开发
+              <a href="/2019/02/24/php/php-qiandao/" rel="next" title="PHP-连续签到功能实现">
+                <i class="fa fa-chevron-left"></i> PHP-连续签到功能实现
               </a>
             
           </div>
@@ -626,7 +627,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -637,7 +638,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -648,7 +649,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -763,7 +764,7 @@
 </div>
 <div class="copyright">
   <div class="powered-by"></div>
-  <span class="post-count">✍️ 收录18.2k个字</span>
+  <span class="post-count">✍️ 收录27.5k个字</span>
 </div>
 <!-- 在网页底部添加网站运行时间 -->
 

@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="javaScript技巧,学习笔记," />
+  <meta name="keywords" content="学习笔记,javaScript技巧," />
 
 
 
@@ -96,10 +96,10 @@
 <meta property="og:description" content="Jquery如何实现手风琴效果 js部分代码 1234567891011121314&#x2F;&#x2F;设计师手风琴展示 if (windowWidth &gt; 1024) &amp;#123;     $(document).ready(function () &amp;#123;         var gao &#x3D; 0;         gao &#x3D; $(&quot;.shoufengqing-box li:nth-child(odd">
 <meta property="og:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/shoufengqing.gif">
 <meta property="article:published_time" content="2019-02-24T01:02:13.000Z">
-<meta property="article:modified_time" content="2020-03-26T14:48:19.590Z">
+<meta property="article:modified_time" content="2020-03-27T04:10:04.072Z">
 <meta property="article:author" content="Jony">
-<meta property="article:tag" content="javaScript技巧">
 <meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="javaScript技巧">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/shoufengqing.gif">
 
@@ -458,6 +458,7 @@
         <h1>Jquery如何实现手风琴效果</h1>
 <h3 id="js部分代码">js部分代码</h3>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//设计师手风琴展示</span><br> <span class="hljs-keyword">if</span> (windowWidth &gt; <span class="hljs-number">1024</span>) &#123;<br>     $(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>         <span class="hljs-keyword">var</span> gao = <span class="hljs-number">0</span>;<br>         gao = $(<span class="hljs-string">".shoufengqing-box li:nth-child(odd)"</span>).height() * <span class="hljs-number">1</span>;<br>         $(<span class="hljs-string">".shoufengqing-box li:nth-child(even)"</span>).height(gao); <span class="hljs-comment">//让偶数的li高自适应</span><br>         $(<span class="hljs-string">".shoufengqing-box li:nth-child(odd)"</span>).hide();<br>         $(<span class="hljs-string">".shoufengqing-box li:nth-child(7)"</span>).show();<br>         $(<span class="hljs-string">".shoufengqing-box li:odd"</span>).mouseover(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>             $(<span class="hljs-string">".shoufengqing-box li:even"</span>).hide();<br>             $(<span class="hljs-keyword">this</span>).prev().show();<br>         &#125;)<br>     &#125;)<br> &#125;<br></code></pre></td></tr></table></figure>
+<a id="more"></a>
 <h3 id="html部分代码">html部分代码</h3>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"shoufengqing"</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"shoufengqing-text"</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>GUCCI2019设计师新款大秀<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"shoufengqing-box"</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"box"</span>&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"img/GUCCI-1.png"</span>/ <span class="hljs-attr">width</span>=<span class="hljs-string">"100%"</span>&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>GUCCI2018设计师大秀<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"red"</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>G<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"box"</span>&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"img/GUCCI-2.jpg"</span>/ <span class="hljs-attr">width</span>=<span class="hljs-string">"100%"</span>&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>GUCCI2018设计师大秀<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"green"</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>U<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"box"</span>&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"img/GUCCI-3.jpg"</span>/ <span class="hljs-attr">width</span>=<span class="hljs-string">"100%"</span>&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>GUCCI2018设计师大秀<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"red"</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>C<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"box"</span>&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"img/GUCCI-4.jpg"</span>/ <span class="hljs-attr">width</span>=<span class="hljs-string">"100%"</span>&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>GUCCI2018设计师大秀<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"green"</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>C<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"box"</span>&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"img/GUCCI-6.jpg"</span>/ <span class="hljs-attr">width</span>=<span class="hljs-string">"100%"</span>&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>GUCCI2018设计师大秀<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"red"</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>I<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"box"</span>&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"img/GUCCI-7.jpg"</span>/ <span class="hljs-attr">width</span>=<span class="hljs-string">"100%"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"img2"</span>&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>GUCCI2018设计师大秀<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"green"</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&amp;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <h3 id="css部分">css部分</h3>
@@ -487,9 +488,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javaScript%E6%8A%80%E5%B7%A7/" rel="tag"><i class="fa fa-tag"></i> javaScript技巧</a>
-          
             <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"><i class="fa fa-tag"></i> 学习笔记</a>
+          
+            <a href="/tags/javaScript%E6%8A%80%E5%B7%A7/" rel="tag"><i class="fa fa-tag"></i> javaScript技巧</a>
           
         </div>
       
@@ -512,8 +513,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/02/24/js/js-redom/" rel="prev" title="javaScript-随机数">
-                javaScript-随机数 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/24/js/js-mengban/" rel="prev" title="javaScript-图片蒙版">
+                javaScript-图片蒙版 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -638,7 +639,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -649,7 +650,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -660,7 +661,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -791,7 +792,7 @@
 </div>
 <div class="copyright">
   <div class="powered-by"></div>
-  <span class="post-count">✍️ 收录18.2k个字</span>
+  <span class="post-count">✍️ 收录27.5k个字</span>
 </div>
 <!-- 在网页底部添加网站运行时间 -->
 

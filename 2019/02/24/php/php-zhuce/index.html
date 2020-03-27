@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="PHP实战,小程序开发," />
+  <meta name="keywords" content="小程序开发,PHP实战," />
 
 
 
@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="小程序实现注册功能 PHP实现小程序注册 本示例基于thinkPHP3.2开发，如果需要表单验证，自行创建一个model类处理数据即可 1234567891011121314151617181920212223242526272829303132333435363738394041424344public function register()    &amp;#123;        $openid &#x3D;">
+<meta name="description" content="小程序实现注册功能 PHP实现小程序注册 本示例基于thinkPHP3.2开发，如果需要表单验证，自行创建一个model类处理数据即可">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PHP-小程序注册后台实现">
 <meta property="og:url" content="http://yoursite.com/2019/02/24/php/php-zhuce/index.html">
 <meta property="og:site_name" content="Jony&#39;s blog">
-<meta property="og:description" content="小程序实现注册功能 PHP实现小程序注册 本示例基于thinkPHP3.2开发，如果需要表单验证，自行创建一个model类处理数据即可 1234567891011121314151617181920212223242526272829303132333435363738394041424344public function register()    &amp;#123;        $openid &#x3D;">
+<meta property="og:description" content="小程序实现注册功能 PHP实现小程序注册 本示例基于thinkPHP3.2开发，如果需要表单验证，自行创建一个model类处理数据即可">
 <meta property="og:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/q0R5sd.png">
 <meta property="article:published_time" content="2019-02-24T01:02:13.000Z">
-<meta property="article:modified_time" content="2020-03-26T14:48:48.068Z">
+<meta property="article:modified_time" content="2020-03-27T04:11:22.769Z">
 <meta property="article:author" content="Jony">
-<meta property="article:tag" content="PHP实战">
 <meta property="article:tag" content="小程序开发">
+<meta property="article:tag" content="PHP实战">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/q0R5sd.png">
 
@@ -458,6 +458,7 @@
         <h1>小程序实现注册功能</h1>
 <h2 id="PHP实现小程序注册">PHP实现小程序注册</h2>
 <p>本示例基于thinkPHP3.2开发，如果需要表单验证，自行创建一个model类处理数据即可</p>
+<a id="more"></a>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">register</span><span class="hljs-params">()</span></span><br><span class="hljs-function">    </span>&#123;<br>        $openid = I(<span class="hljs-string">'openid'</span>);<br>        $wxInfo = I(<span class="hljs-string">'globalData'</span>);<br>        $wxInfo = <span class="hljs-keyword">$this</span>-&gt;object_to_array(json_decode(htmlspecialchars_decode($wxInfo)));<br>        $name 	= I(<span class="hljs-string">'name'</span>);<br>        $tel 	= I(<span class="hljs-string">'tel'</span>);<br>		$email	= I(<span class="hljs-string">'email'</span>);<br>        $school	= I(<span class="hljs-string">'school'</span>);<br>        $address = I(<span class="hljs-string">'address'</span>);<br>        $birthday = I(<span class="hljs-string">'birthday'</span>);<br>        <span class="hljs-keyword">if</span> (!$openid || $openid == <span class="hljs-string">'undefined'</span>) &#123;<br>            <span class="hljs-keyword">$this</span>-&gt;ajaxReturn([<span class="hljs-string">'success'</span> =&gt; <span class="hljs-keyword">false</span>, <span class="hljs-string">'is_register'</span> =&gt; <span class="hljs-keyword">false</span>, <span class="hljs-string">'data'</span> =&gt; <span class="hljs-string">'no openid'</span>]);<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">empty</span>($wxInfo) || $wxInfo == <span class="hljs-string">'undefined'</span>) &#123;<br>            <span class="hljs-keyword">$this</span>-&gt;ajaxReturn([<span class="hljs-string">'success'</span> =&gt; <span class="hljs-keyword">false</span>, <span class="hljs-string">'is_register'</span> =&gt; <span class="hljs-keyword">false</span>, <span class="hljs-string">'data'</span> =&gt; <span class="hljs-string">'no exInfo'</span>]);<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (!$name || $name == <span class="hljs-string">'undefined'</span>) &#123;<br>            <span class="hljs-keyword">$this</span>-&gt;ajaxReturn([<span class="hljs-string">'success'</span> =&gt; <span class="hljs-keyword">false</span>, <span class="hljs-string">'is_register'</span> =&gt; <span class="hljs-keyword">false</span>, <span class="hljs-string">'data'</span> =&gt; <span class="hljs-string">'no name'</span>]);<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (!$tel || $tel == <span class="hljs-string">'undefined'</span>) &#123;<br>            <span class="hljs-keyword">$this</span>-&gt;ajaxReturn([<span class="hljs-string">'success'</span> =&gt; <span class="hljs-keyword">false</span>, <span class="hljs-string">'is_register'</span> =&gt; <span class="hljs-keyword">false</span>, <span class="hljs-string">'data'</span> =&gt; <span class="hljs-string">'no tel'</span>]);<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (!$school || $school == <span class="hljs-string">'undefined'</span>) &#123;<br>            <span class="hljs-keyword">$this</span>-&gt;ajaxReturn([<span class="hljs-string">'success'</span> =&gt; <span class="hljs-keyword">false</span>, <span class="hljs-string">'is_register'</span> =&gt; <span class="hljs-keyword">false</span>, <span class="hljs-string">'data'</span> =&gt; <span class="hljs-string">'no school'</span>]);<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (!$address || $address == <span class="hljs-string">'undefined'</span>) &#123;<br>            <span class="hljs-keyword">$this</span>-&gt;ajaxReturn([<span class="hljs-string">'success'</span> =&gt; <span class="hljs-keyword">false</span>, <span class="hljs-string">'is_register'</span> =&gt; <span class="hljs-keyword">false</span>, <span class="hljs-string">'data'</span> =&gt; <span class="hljs-string">'no address'</span>]);<br>        &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (!$email || $email == <span class="hljs-string">'undefined'</span>) &#123;<br>            <span class="hljs-keyword">$this</span>-&gt;ajaxReturn([<span class="hljs-string">'success'</span> =&gt; <span class="hljs-keyword">false</span>, <span class="hljs-string">'is_register'</span> =&gt; <span class="hljs-keyword">false</span>, <span class="hljs-string">'data'</span> =&gt; <span class="hljs-string">'no email'</span>]);<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (!$birthday || $birthday == <span class="hljs-string">'undefined'</span>) &#123;<br>            <span class="hljs-keyword">$this</span>-&gt;ajaxReturn([<span class="hljs-string">'success'</span> =&gt; <span class="hljs-keyword">false</span>, <span class="hljs-string">'is_register'</span> =&gt; <span class="hljs-keyword">false</span>, <span class="hljs-string">'data'</span> =&gt; <span class="hljs-string">'no birthday'</span>]);<br>        &#125;<br>        $gmt = time();<br>        $STUDENT = M(<span class="hljs-string">'user_info'</span>);<br>        $exist	 = $STUDENT-&gt;where(<span class="hljs-keyword">array</span>(<span class="hljs-string">'openid'</span>=&gt;$openid))-&gt;find();<br>        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">empty</span>($exist)) &#123;<br>			$uid = $STUDENT-&gt;add(<span class="hljs-keyword">array</span>(<span class="hljs-string">'openid'</span>=&gt;$openid, <span class="hljs-string">'name'</span>=&gt;$name, <span class="hljs-string">'tel'</span>=&gt;$tel,<span class="hljs-string">'email'</span>=&gt;$email, <span class="hljs-string">'school'</span>=&gt;$school, <span class="hljs-string">'address'</span>=&gt;$address, <span class="hljs-string">'birthday'</span>=&gt;$birthday, <span class="hljs-string">'sex'</span>=&gt;$wxInfo[<span class="hljs-string">'gender'</span>], <span class="hljs-string">'head_img'</span>=&gt;$wxInfo[<span class="hljs-string">'avatarUrl'</span>], <span class="hljs-string">'status'</span>=&gt;<span class="hljs-string">'1'</span>, <span class="hljs-string">'gmt_create'</span>=&gt;$gmt, <span class="hljs-string">'gmt_modified'</span>=&gt;$gmt));<br>			<span class="hljs-keyword">if</span> (!<span class="hljs-keyword">empty</span>($uid)) &#123;<br>				M(<span class="hljs-string">'weixin'</span>)-&gt;add(<span class="hljs-keyword">array</span>(<span class="hljs-string">'openid'</span>=&gt;$openid, <span class="hljs-string">'uid'</span>=&gt;$uid, <span class="hljs-string">'type'</span>=&gt;<span class="hljs-string">'1'</span>, <span class="hljs-string">'nickname'</span>=&gt;$wxInfo[<span class="hljs-string">'nickName'</span>], <span class="hljs-string">'gender'</span>=&gt;$wxInfo[<span class="hljs-string">'gender'</span>], <span class="hljs-string">'country'</span>=&gt;$wxInfo[<span class="hljs-string">'country'</span>], <span class="hljs-string">'province'</span>=&gt;$wxInfo[<span class="hljs-string">'province'</span>], <span class="hljs-string">'city'</span>=&gt;$wxInfo[<span class="hljs-string">'city'</span>], <span class="hljs-string">'avatar'</span>=&gt;$wxInfo[<span class="hljs-string">'avatarUrl'</span>], <span class="hljs-string">'status'</span>=&gt;<span class="hljs-string">'1'</span>, <span class="hljs-string">'gmt_create'</span>=&gt;$gmt, <span class="hljs-string">'gmt_modified'</span>=&gt;$gmt));<br>		        <span class="hljs-keyword">$this</span>-&gt;ajaxReturn([<span class="hljs-string">'success'</span> =&gt; <span class="hljs-keyword">true</span>, <span class="hljs-string">'is_register'</span> =&gt; <span class="hljs-keyword">true</span>, <span class="hljs-string">'data'</span> =&gt; <span class="hljs-string">'注册成功'</span>]);<br>			&#125; <span class="hljs-keyword">else</span> &#123;<br>		        <span class="hljs-keyword">$this</span>-&gt;ajaxReturn([<span class="hljs-string">'success'</span> =&gt; <span class="hljs-keyword">false</span>, <span class="hljs-string">'is_register'</span> =&gt; <span class="hljs-keyword">false</span>, <span class="hljs-string">'data'</span> =&gt; <span class="hljs-string">'student表写入失败'</span>]);<br>			&#125;<br>	    &#125; <span class="hljs-keyword">else</span> &#123;<br>	        <span class="hljs-keyword">$this</span>-&gt;ajaxReturn([<span class="hljs-string">'success'</span> =&gt; <span class="hljs-keyword">false</span>, <span class="hljs-string">'is_register'</span> =&gt; <span class="hljs-keyword">true</span>, <span class="hljs-string">'data'</span> =&gt; <span class="hljs-string">'用户已注册'</span>]);<br>	    &#125;<br>        <br>    &#125;<br></code></pre></td></tr></table></figure>
 <h2 id="注册信息修改">注册信息修改</h2>
 <p>支持部分信息的修改，采用了前后端双重验证修改信息的准确性</p>
@@ -492,9 +493,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/PHP%E5%AE%9E%E6%88%98/" rel="tag"><i class="fa fa-tag"></i> PHP实战</a>
-          
             <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/" rel="tag"><i class="fa fa-tag"></i> 小程序开发</a>
+          
+            <a href="/tags/PHP%E5%AE%9E%E6%88%98/" rel="tag"><i class="fa fa-tag"></i> PHP实战</a>
           
         </div>
       
@@ -517,8 +518,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/02/24/php/php-MVC/" rel="prev" title="PHP-MVC开发">
-                PHP-MVC开发 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/24/php/php-qiandao/" rel="prev" title="PHP-连续签到功能实现">
+                PHP-连续签到功能实现 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -643,7 +644,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -654,7 +655,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -665,7 +666,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -796,7 +797,7 @@
 </div>
 <div class="copyright">
   <div class="powered-by"></div>
-  <span class="post-count">✍️ 收录18.2k个字</span>
+  <span class="post-count">✍️ 收录27.5k个字</span>
 </div>
 <!-- 在网页底部添加网站运行时间 -->
 

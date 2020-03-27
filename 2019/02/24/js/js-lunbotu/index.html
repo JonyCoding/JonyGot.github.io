@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="javaScript技巧,学习笔记," />
+  <meta name="keywords" content="学习笔记,javaScript技巧," />
 
 
 
@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="Js实现轮播图 Jquery实现轮播图 主要实现了以下几个功能：  banner轮播效果 鼠标移入出现标题 鼠标移入放大图片 左右点击按钮  js部分代码 12345678910111213141516171819202122232425262728293031323334353637383940&lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;js&#x2F;jquery-3.">
+<meta name="description" content="Js实现轮播图 Jquery实现轮播图 主要实现了以下几个功能：  banner轮播效果 鼠标移入出现标题 鼠标移入放大图片 左右点击按钮">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javaScript-轮播图">
 <meta property="og:url" content="http://yoursite.com/2019/02/24/js/js-lunbotu/index.html">
 <meta property="og:site_name" content="Jony&#39;s blog">
-<meta property="og:description" content="Js实现轮播图 Jquery实现轮播图 主要实现了以下几个功能：  banner轮播效果 鼠标移入出现标题 鼠标移入放大图片 左右点击按钮  js部分代码 12345678910111213141516171819202122232425262728293031323334353637383940&lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;js&#x2F;jquery-3.">
+<meta property="og:description" content="Js实现轮播图 Jquery实现轮播图 主要实现了以下几个功能：  banner轮播效果 鼠标移入出现标题 鼠标移入放大图片 左右点击按钮">
 <meta property="og:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/mcYOvg.png">
 <meta property="article:published_time" content="2019-02-24T01:02:13.000Z">
-<meta property="article:modified_time" content="2020-03-26T14:48:12.776Z">
+<meta property="article:modified_time" content="2020-03-27T04:09:27.521Z">
 <meta property="article:author" content="Jony">
-<meta property="article:tag" content="javaScript技巧">
 <meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="javaScript技巧">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://jony-blog.oss-cn-beijing.aliyuncs.com/blog/mcYOvg.png">
 
@@ -464,6 +464,7 @@
 <li>鼠标移入放大图片</li>
 <li>左右点击按钮</li>
 </ol>
+<a id="more"></a>
 <p>js部分代码</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs js">&lt;script type=<span class="hljs-string">"text/javascript"</span> src=<span class="hljs-string">"js/jquery-3.3.1.js"</span>&gt;&lt;<span class="hljs-regexp">/script&gt;</span><br><span class="hljs-regexp">		&lt;script&gt;</span><br><span class="hljs-regexp">			$(document).ready(function()&#123;</span><br><span class="hljs-regexp">				var xuhao=0,kuan=340;</span><br><span class="hljs-regexp">				var amount=6;</span><br><span class="hljs-regexp">				$(".button-left").click(function()&#123;</span><br><span class="hljs-regexp">					changelist("left");</span><br><span class="hljs-regexp">				&#125;)</span><br><span class="hljs-regexp">				$(".button-right").click(function()&#123;</span><br><span class="hljs-regexp">					changelist("right");</span><br><span class="hljs-regexp">				&#125;)</span><br><span class="hljs-regexp">				$(".dian span").click(function()&#123;</span><br><span class="hljs-regexp">					var index=$(".dian span").index(this);</span><br><span class="hljs-regexp">					changelist(index);</span><br><span class="hljs-regexp">				&#125;)</span><br><span class="hljs-regexp">				function changelist(canshu)&#123;</span><br><span class="hljs-regexp">				if(!isNaN(canshu))&#123;</span><br><span class="hljs-regexp">					xuhao=canshu;</span><br><span class="hljs-regexp">				&#125;</span><br><span class="hljs-regexp">				else if(canshu=="left")&#123;</span><br><span class="hljs-regexp">					xuhao--;</span><br><span class="hljs-regexp">					if(xuhao==-1)</span><br><span class="hljs-regexp">				 	xuhao=amount-1</span><br><span class="hljs-regexp">				&#125;</span><br><span class="hljs-regexp">				else if(canshu=="right")&#123;</span><br><span class="hljs-regexp">					xuhao=(xuhao+1)%amount;</span><br><span class="hljs-regexp">				&#125;</span><br><span class="hljs-regexp">				var change=-kuan*xuhao+"px"</span><br><span class="hljs-regexp">				$(".slide").animate(&#123;marginLeft:change&#125;,1000)</span><br><span class="hljs-regexp">				$(".dian span").removeClass("curr").eq(xuhao).addClass("curr");</span><br><span class="hljs-regexp">			&#125;</span><br><span class="hljs-regexp">			&#125;)</span><br><span class="hljs-regexp">	var xuhao=0,kuan=340;</span><br><span class="hljs-regexp">	var amount=6;</span><br><span class="hljs-regexp">	$(function()&#123;</span><br><span class="hljs-regexp">		</span><br><span class="hljs-regexp">		$(".button-left").click(function()&#123;</span><br><span class="hljs-regexp">			 </span><br><span class="hljs-regexp">		&#125;)</span><br><span class="hljs-regexp">	&#125;)</span><br></code></pre></td></tr></table></figure>
 <p>html部分代码</p>
@@ -492,9 +493,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javaScript%E6%8A%80%E5%B7%A7/" rel="tag"><i class="fa fa-tag"></i> javaScript技巧</a>
-          
             <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"><i class="fa fa-tag"></i> 学习笔记</a>
+          
+            <a href="/tags/javaScript%E6%8A%80%E5%B7%A7/" rel="tag"><i class="fa fa-tag"></i> javaScript技巧</a>
           
         </div>
       
@@ -507,8 +508,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/24/js/js-mengban/" rel="next" title="javaScript-图片蒙版">
-                <i class="fa fa-chevron-left"></i> javaScript-图片蒙版
+              <a href="/2019/02/24/js/js-redom/" rel="next" title="javaScript-随机数">
+                <i class="fa fa-chevron-left"></i> javaScript-随机数
               </a>
             
           </div>
@@ -517,8 +518,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/02/24/js/js-lunbo/" rel="prev" title="javaScript">
-                javaScript <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/24/js/js-caidan/" rel="prev" title="javaScript-菜单价格添加">
+                javaScript-菜单价格添加 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -643,7 +644,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -654,7 +655,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -665,7 +666,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -796,7 +797,7 @@
 </div>
 <div class="copyright">
   <div class="powered-by"></div>
-  <span class="post-count">✍️ 收录18.2k个字</span>
+  <span class="post-count">✍️ 收录27.5k个字</span>
 </div>
 <!-- 在网页底部添加网站运行时间 -->
 
