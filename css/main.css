@@ -1962,7 +1962,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffa;
+  background: #adf283;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3394,7 +3394,7 @@ a {
   }
   .back-to-top.back-to-top-on {
     bottom: unset;
-    top: calc(100vh - 1200px - 200px);
+    top: calc(100vh - 1220px - 200px);
   }
   .category-all-page .category-list-item {
     width: 96%;
